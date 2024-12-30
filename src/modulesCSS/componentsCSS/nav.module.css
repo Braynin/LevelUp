@@ -1,15 +1,13 @@
 .nav {
-    display: flex;
-    gap: 30px;
-    justify-content: flex-end;
-    margin-right: 40px;
-
   display: flex;
-
-  align-items: center;
-  background-color: transparent;
+  justify-content: space-around; /* O gap si prefieres */
+  width: 30%; /* Ajusta este valor según el espacio necesario */
 }
+
 .enlaces {
   text-decoration: none;
   color: black;
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
 }
