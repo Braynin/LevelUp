@@ -1,7 +1,8 @@
+/* src/modulesCSS/componentsCSS/nav.module.css */
 .nav {
   display: flex;
-  justify-content: space-around; /* O gap si prefieres */
-  width: 30%; /* Ajusta este valor según el espacio necesario */
+  justify-content: space-around;
+  width: 30%;
 }
 
 .enlaces {
@@ -10,4 +11,9 @@
   font-family: "Poppins", serif;
   font-weight: 500;
   font-style: normal;
+}
+
+.enlaces.active {
+  color: blue ;
+  font-weight: bold;
 }
