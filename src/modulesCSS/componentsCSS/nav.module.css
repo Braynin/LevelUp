@@ -1,8 +1,8 @@
 .nav {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     justify-content: flex-end;
-    
+    margin-right: 40px;
 
 }
 .enlaces {
