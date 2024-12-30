@@ -19,6 +19,14 @@
   align-items: center;
 }
 
+.h1-container,
+.concept-container,
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .h1 {
   font-size: 2rem;
   width: 100%;
@@ -26,12 +34,6 @@
   animation-duration: 6s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-}
-
-.concept-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .concept {
