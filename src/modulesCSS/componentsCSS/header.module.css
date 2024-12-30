@@ -1,13 +1,8 @@
 .header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-}
-
-.logo {
-  width: 100px;
-  height: 100px;
-  background-color: transparent;
-  border-radius: 50%;
+  position: fixed;
 }

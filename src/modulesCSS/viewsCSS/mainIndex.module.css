@@ -1,0 +1,57 @@
+/* src/modulesCSS/viewsCSS/mainIndex.module.css */
+.Hero-Container {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  height: 100px; /* Altura suficiente para evitar desbordes */
+  overflow: hidden;
+}
+
+.h1 {
+  font-size: 2rem;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.h1-animate-1 {
+  animation-name: fadeInOut1;
+}
+
+.h1-animate-2 {
+  animation-name: fadeInOut2;
+}
+
+@keyframes fadeInOut1 {
+  0%,
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  45%,
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes fadeInOut2 {
+  0%,
+  45% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  50%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95%,
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}

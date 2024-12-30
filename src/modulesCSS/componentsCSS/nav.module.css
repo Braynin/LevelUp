@@ -1,8 +1,8 @@
 .nav {
   display: flex;
-  justify-content: flex-end;
+
   align-items: center;
-  justify-content: space-between;
+  background-color: transparent;
 }
 .enlaces {
   text-decoration: none;
