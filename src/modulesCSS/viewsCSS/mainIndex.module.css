@@ -1,15 +1,26 @@
-/* src/modulesCSS/viewsCSS/mainIndex.module.css */
+.animate-1 {
+  animation-name: fadeInOut1;
+}
+
+.animate-2 {
+  animation-name: fadeInOut2;
+}
+
 .Hero-Container {
   text-align: center;
-  padding: 20px;
-  position: relative;
-  height: 100px; /* Altura suficiente para evitar desbordes */
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Hero-Text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .h1 {
   font-size: 2rem;
-  position: absolute;
   width: 100%;
   opacity: 0;
   animation-duration: 6s;
@@ -17,12 +28,28 @@
   animation-iteration-count: infinite;
 }
 
-.h1-animate-1 {
-  animation-name: fadeInOut1;
+.concept-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.h1-animate-2 {
-  animation-name: fadeInOut2;
+.concept {
+  font-size: 1rem;
+  width: 50%;
+  opacity: 0;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.button {
+  font-size: 1rem;
+  width: 100%;
+  opacity: 0;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 @keyframes fadeInOut1 {
