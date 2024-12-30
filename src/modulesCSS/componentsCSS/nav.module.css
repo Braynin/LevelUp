@@ -1,0 +1,11 @@
+.nav {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    
+
+}
+.enlaces {
+    text-decoration: none;
+    color: black;
+}
