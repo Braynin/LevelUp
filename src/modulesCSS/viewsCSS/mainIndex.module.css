@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
 }
 
 .h1-container,
@@ -25,26 +26,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.h1 {
-  font-size: 2rem;
   width: 100%;
-  opacity: 0;
-  animation-duration: 6s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  position: relative;
 }
 
-.concept {
-  font-size: 1rem;
-  width: 50%;
-  opacity: 0;
-  animation-duration: 6s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
-
+.h1,
+.concept,
 .button {
   font-size: 1rem;
   width: 100%;
@@ -54,16 +41,37 @@
   animation-iteration-count: infinite;
 }
 
+.h1:nth-child(2),
+.concept:nth-child(2),
+.button:nth-child(2) {
+  position: absolute;
+}
+
+.h1 {
+  font-size: 3rem;
+}
+
+.concept {
+  width: 40%;
+  text-align: justify;
+}
+
+.button {
+  width: 30%;
+}
+
+.hero-image {
+  width: 50%;
+}
+
 @keyframes fadeInOut1 {
   0%,
   40% {
     opacity: 1;
-    transform: translateY(0);
   }
   45%,
   100% {
     opacity: 0;
-    transform: translateY(-50px);
   }
 }
 
@@ -71,16 +79,13 @@
   0%,
   45% {
     opacity: 0;
-    transform: translateY(50px);
   }
   50%,
   90% {
     opacity: 1;
-    transform: translateY(0);
   }
   95%,
   100% {
     opacity: 0;
-    transform: translateY(-50px);
   }
 }
