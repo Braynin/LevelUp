@@ -1,6 +1,8 @@
 ---
-import AnimatedHeadings from "../assets/animatedHeadings.tsx";
+import styles from "../modulesCSS/viewsCSS/mainIndex.module.css";
+import AnimatedHeadings from "./animatedHeadings.astro";
 import QuienesSomos from "./quienesSomos.astro";
+import Formulario from "./formulario.astro";
 ---
 
 <html>
@@ -8,13 +10,13 @@ import QuienesSomos from "./quienesSomos.astro";
     <title>Astro con React</title>
   </head>
   <body>
-    <main style="padding-top: 90px;">
+    <main class={styles.main}>
       <AnimatedHeadings />
       <QuienesSomos />
       <div></div>
       <div></div>
       <div></div>
-      <div></div>
+      <Formulario />
     </main>
   </body>
 </html>
