@@ -12,6 +12,9 @@
   font-weight: 500;
   font-style: normal;
 }
+.enlaces:hover{
+  color: blue;
+}
 
 .enlaces.active {
   color: blue ;
