@@ -1,0 +1,91 @@
+.animate-1 {
+  animation-name: fadeInOut1;
+}
+
+.animate-2 {
+  animation-name: fadeInOut2;
+}
+
+.Hero-Container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Hero-Text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.h1-container,
+.concept-container,
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.h1,
+.concept,
+.button {
+  font-size: 1rem;
+  width: 100%;
+  opacity: 0;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.h1:nth-child(2),
+.concept:nth-child(2),
+.button:nth-child(2) {
+  position: absolute;
+}
+
+.h1 {
+  font-size: 3rem;
+}
+
+.concept {
+  width: 40%;
+  text-align: justify;
+}
+
+.button {
+  width: 30%;
+}
+
+.hero-image {
+  width: 50%;
+}
+
+@keyframes fadeInOut1 {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  45%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInOut2 {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  50%,
+  90% {
+    opacity: 1;
+  }
+  95%,
+  100% {
+    opacity: 0;
+  }
+}
