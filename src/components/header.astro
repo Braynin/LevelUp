@@ -3,7 +3,28 @@ import Nav from "./nav.astro";
 import styles from "../modulesCSS/componentsCSS/header.module.css";
 ---
 
-<di class={styles.header}>
+<div id="header" class={styles.header}>
   <div class={styles.logo}>haki ba el logo</div>
   <Nav />
-</di>
+</div>
+
+<script is:inline>
+  // Escucha el evento DOMContentLoaded para asegurarte de que el DOM está cargado.
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("header");
+
+    if (!header) {
+      console.error("El elemento 'header' no fue encontrado.");
+      return;
+    }
+
+    // Escucha el evento de scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 90) {
+        header.classList.add("scrolled"); // Clase global
+      } else {
+        header.classList.remove("scrolled"); // Clase global
+      }
+    });
+  });
+</script>
