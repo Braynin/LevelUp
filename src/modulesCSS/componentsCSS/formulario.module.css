@@ -1,24 +1,24 @@
-/* Estilo para el contenedor principal del formulario */
+* {
+  font-family: "Poppins", serif;
+}
+/* Contenedor principal del formulario */
 .formulario {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  background-color: #ffeb3b; /* Color amarillo */
-  padding: 20px;
+  background-color: #ffd500;
+  width: 100%;
+  padding-bottom: 30px;
 }
-
 /* Imagen al lado izquierdo */
 .img {
   width: 50%;
   object-fit: cover;
-  border-radius: 5px;
 }
 
-/* Contenedor del formulario */
 .form {
+  max-width: 400px;
   width: 50%;
-  padding: 20px;
 }
 
 .form h2 {
@@ -28,40 +28,42 @@
   margin-bottom: 20px;
 }
 
-/* Estilo general para los grupos de campos */
-.form-group {
-  margin-bottom: 15px;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #000;
+.form-group {
+  margin-bottom: 20px;
 }
 
 .form-group input,
 .form-group textarea {
+  padding: 0px 15px;
+  height: 50px;
   width: 100%;
-  padding: 10px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #666; /* Color gris para los placeholders */
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #000;
+  border-color: #333;
 }
 
 /* Botón de envío */
 .btn {
-  display: block;
-  width: 100%;
-  padding: 10px 15px;
-  background-color: #fff;
+  max-width: 40%;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
   color: #000;
   font-size: 1rem;
   font-weight: bold;
@@ -69,6 +71,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .btn:hover {

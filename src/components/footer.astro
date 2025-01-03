@@ -1,0 +1,43 @@
+---
+import styles from "../modulesCSS/componentsCSS/footer.module.css";
+---
+
+<footer class={styles.footer}>
+  <div class={styles["footer-top"]}>
+    <img src="logo.png" alt="LevelUp Logo" class={styles["footer-logo"]} />
+    <h2>Level Up</h2>
+  </div>
+  <div class={styles["footer-container"]}>
+    <div class={styles["footer-section"]}>
+      <h3>SERVICIOS</h3>
+      <ul>
+        <li>Desarrollo Web</li>
+        <li>Desarrollo Móvil</li>
+        <li>Desarrollo de Escritorio</li>
+        <li>Consultoría de Software</li>
+        <li>Branding e Identidad</li>
+        <li>Activos Tecnológicos</li>
+      </ul>
+    </div>
+    <div class={styles["footer-section"]}>
+      <h3>UBICACIÓN</h3>
+      <p>Av. Aquisito Noma 6496, Cercado de Lima</p>
+    </div>
+    <div class={styles["footer-section"]}>
+      <h3>CONTACTO</h3>
+      <p>+51 941 444 077</p>
+      <p>hola@invadion.com</p>
+    </div>
+    <div class={styles["footer-section"]}>
+      <h3>REDES SOCIALES</h3>
+      <div class={styles["social-icons"]}>
+        <a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
+        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" /></a>
+      </div>
+    </div>
+  </div>
+  <div class={styles["footer-bottom"]}>
+    <p>©2025 Level Up S.A.C Todos los derechos reservados</p>
+  </div>
+</footer>
