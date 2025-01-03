@@ -1,0 +1,51 @@
+---
+import { IconDeviceIpadHorizontalCode, IconDevices } from "@tabler/icons-react";
+import styles from "../modulesCSS/componentsCSS/servicios.module.css";
+
+---
+<div class={styles.container}>
+  <!-- Contenedor de los íconos -->
+  <div class={styles.icons}>
+    <div id="dev-icon" class={styles.products}>
+      <IconDeviceIpadHorizontalCode className={styles.icon} />
+    </div>
+    <div id="design-icon" class={styles.products}>
+      <IconDevices className={styles.icon} />
+    </div>
+  </div>
+
+  <!-- Contenedor para mostrar la información -->
+  <div class={styles.infoServicios}>
+    <div id="info-box" class={styles.info}></div>
+    <div id="banner" class="banner hidden"></div>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const devIcon = document.getElementById("dev-icon");
+    const designIcon = document.getElementById("design-icon");
+    const infoBox = document.getElementById("info-box");
+    const banner = document.getElementById("banner");
+
+    // Verificar que los elementos existan antes de añadir eventos
+    if (devIcon && designIcon && infoBox && banner) {
+      // Evento para desarrollo
+      devIcon.addEventListener("click", () => {
+        infoBox.innerHTML = "Ofrecemos desarrollo de sitios web personalizados con tecnologías modernas.";
+        banner.classList.remove("hidden"); // Mostrar banner
+        banner.innerHTML = "Banner: Desarrollo de sitios web"; // Actualizar contenido del banner
+      });
+
+      // Evento para diseño
+      designIcon.addEventListener("click", () => {
+        infoBox.innerHTML = "Diseño de sitios web atractivos y funcionales que reflejen la identidad de tu negocio.";
+        banner.classList.remove("hidden"); // Mostrar banner
+        banner.innerHTML = "Banner: Diseño de sitios web"; // Actualizar contenido del banner
+      });
+    } else {
+      console.error("No se encontraron los elementos necesarios en el DOM.");
+    }
+  });
+</script>
