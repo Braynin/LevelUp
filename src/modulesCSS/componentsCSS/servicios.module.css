@@ -35,7 +35,7 @@
 .infoServicios {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px; /* Espacio entre el texto y la imagen */
 }
 
@@ -51,18 +51,23 @@
 .info {
   font-size: 16px;
   color: #555;
-  text-align: justify;
   max-width: 400px;
   padding: 10px; /* Puedes ajustar el padding si es necesario */
   background-color: #f9f9f9;
 }
 
 .title {
-  font-size: 50px;
-  color: #333;
-  text-align: justify;
-  margin-bottom: 10px;
+  font-size: 40px;
+  color: black;
+  
+  width: 70%;
   font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
+}
+.text {
+  
+  font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
 }
