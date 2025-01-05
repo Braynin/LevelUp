@@ -17,10 +17,21 @@ import styles from "../modulesCSS/componentsCSS/servicios.module.css";
   <!-- Contenedor para mostrar la información -->
   <div class={styles.infoServicios}>
     <div id="info-box" class={styles.info}>
-      <h2 id="info-title" class={styles.title}></h2>
-      <p id="info-content"></p>
+      <h1 id="info-title" class={styles.title}></h1>
+      <p id="info-content" class={styles.text}></p>
+      <div id="button-container" class="button-container hidden">
+        <button id="button" class={styles.button}>Contáctanos</button>
+      </div>
     </div>
-    <div id="banner" class="banner hidden"></div>
+
+    <div id="banner" class={styles.bannerhidden}>
+      <img
+        class={styles.bannerImg}
+        src="public/service-content-1.webp"
+        alt="img-servicios"
+      />
+      <div class={styles.cuadrado}></div>
+    </div>
   </div>
 </div>
 
@@ -30,28 +41,19 @@ import styles from "../modulesCSS/componentsCSS/servicios.module.css";
     const designIcon = document.getElementById("design-icon");
     const infoTitle = document.getElementById("info-title");
     const infoContent = document.getElementById("info-content");
-    const banner = document.getElementById("banner");
 
     // Verificar que los elementos existan antes de añadir eventos
-    if (devIcon && designIcon && infoTitle && infoContent && banner) {
+    if (devIcon && designIcon && infoTitle && infoContent) {
       // Mostrar la información de "dev" por defecto
-      infoTitle.innerHTML = "Desarrollo de Sitios Web";
+      infoTitle.innerHTML = "Creación de Sitios Web";
       infoContent.innerHTML =
         "Ofrecemos desarrollo de sitios web personalizados con tecnologías modernas.";
-      banner.classList.remove("hidden"); // Mostrar banner
-      const img = document.createElement("img");
-      img.src = "/service-content-1.webp"; // Ruta de la imagen
-      banner.appendChild(img); // Agregar la imagen al banner
 
       // Evento para desarrollo
       devIcon.addEventListener("click", () => {
-        infoTitle.innerHTML = "Desarrollo de Sitios Web";
+        infoTitle.innerHTML = "Creación de Sitios Web";
         infoContent.innerHTML =
           "Ofrecemos desarrollo de sitios web personalizados con tecnologías modernas.";
-        banner.innerHTML = ""; // Limpiar el contenido anterior del banner
-        const img = document.createElement("img");
-        img.src = "/service-content-1.webp"; // Ruta de la imagen
-        banner.appendChild(img); // Agregar la imagen al banner
       });
 
       // Evento para diseño
@@ -59,10 +61,6 @@ import styles from "../modulesCSS/componentsCSS/servicios.module.css";
         infoTitle.innerHTML = "Diseño de Sitios Web";
         infoContent.innerHTML =
           "Diseño de sitios web atractivos y funcionales que reflejen la identidad de tu negocio.";
-        banner.innerHTML = ""; // Limpiar el contenido anterior del banner
-        const img = document.createElement("img");
-        img.src = "/service-content-1.webp"; // Ruta de la imagen
-        banner.appendChild(img); // Agregar la imagen al banner
       });
     } else {
       console.error("No se encontraron los elementos necesarios en el DOM.");
