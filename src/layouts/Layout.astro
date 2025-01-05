@@ -3,6 +3,11 @@ import styles from "../modulesCSS/componentsCSS/layout.module.css";
 import Header from "../components/header.astro";
 import Formulario from "../components/formulario.astro";
 import Footer from "../components/footer.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,7 +28,7 @@ import Footer from "../components/footer.astro";
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>Level Up</title>
+    <title>{title}</title>
   </head>
   <body class={styles.body}>
     <Header />

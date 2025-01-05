@@ -1,18 +1,20 @@
 ---
 import styles from "../modulesCSS/componentsCSS/nav.module.css";
+import { getCollection } from "astro:content";
 
-// Obtener la ruta actual como string
 const pathname: string = Astro.url.pathname;
 
-// Función para agregar la clase 'active' si la ruta coincide
 const activeClass = (path: string): string => {
-  return pathname === path ? styles.active : ''; // Usa 'styles.active' para asegurar que el CSS se aplique correctamente
+  return pathname === path ? styles.active : "";
 };
 ---
 
 <div class={styles.nav}>
-  <a class={`${styles.enlaces} ${activeClass('/')}`} href="/">Inicio</a>
-  <a class={`${styles.enlaces} ${activeClass('/servicios/')}`} href="/servicios/">Servicios</a>
-  <a class={`${styles.enlaces} ${activeClass('/portafolio')}`} href="/portafolio">Portafolio</a>
-  <a class={`${styles.enlaces} ${activeClass('/contacto')}`} href="/contacto">Contáctenos</a>
+  <a class={`${styles.enlaces} ${activeClass("/")}`} href="/">Inicio</a>
+  <a class={`${styles.enlaces} ${activeClass("/Servicios")}`} href="/Servicios"
+    >Servicios</a
+  >
+  <a class={`${styles.enlaces} ${activeClass("/contacto")}`} href="/contacto"
+    >Contáctenos</a
+  >
 </div>
