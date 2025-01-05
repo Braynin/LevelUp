@@ -20,12 +20,13 @@ import styles from "../modulesCSS/componentsCSS/servicios.module.css";
       <h1 id="info-title" class={styles.title}></h1>
       <p id="info-content" class={styles.text}></p>
       <div id="button-container" class="button-container hidden">
-        <button id="button" class={styles.button}>Contacto</button>
+        <button id="button" class={styles.button}>Contáctanos</button>
       </div>
     </div>
     
     <div id="banner" class={styles.bannerhidden}>
-      <img src="public/service-content-1.webp" alt="img-servicios">
+      <img class={styles.bannerImg} src="public/service-content-1.webp" alt="img-servicios">
+      <div class={styles.cuadrado}></div>
     </div>
     
   </div>
@@ -42,12 +43,12 @@ import styles from "../modulesCSS/componentsCSS/servicios.module.css";
     // Verificar que los elementos existan antes de añadir eventos
     if (devIcon && designIcon && infoTitle && infoContent) {
       // Mostrar la información de "dev" por defecto
-      infoTitle.innerHTML = "Desarrollo de Sitios Web";
+      infoTitle.innerHTML = "Creación de Sitios Web";
       infoContent.innerHTML = "Ofrecemos desarrollo de sitios web personalizados con tecnologías modernas.";
 
       // Evento para desarrollo
       devIcon.addEventListener("click", () => {
-        infoTitle.innerHTML = "Desarrollo de Sitios Web";
+        infoTitle.innerHTML = "Creación de Sitios Web";
         infoContent.innerHTML = "Ofrecemos desarrollo de sitios web personalizados con tecnologías modernas.";
      
       });
