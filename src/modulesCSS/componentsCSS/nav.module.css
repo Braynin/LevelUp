@@ -19,6 +19,7 @@
   padding: 16px 0px;
   position: relative; /* Necesario para posicionar el submenú */
   display: inline-block;
+  cursor: pointer;
 }
 
 /* Submenú oculto por defecto */
