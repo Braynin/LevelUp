@@ -1,6 +1,5 @@
 ---
 import styles from "../modulesCSS/componentsCSS/nav.module.css";
-import { getCollection } from "astro:content";
 
 const pathname: string = Astro.url.pathname;
 
@@ -9,11 +8,21 @@ const activeClass = (path: string): string => {
 };
 ---
 
-<div class={styles.nav}>
+<div class="w-1/3 flex justify-around items-center">
   <a class={`${styles.enlaces} ${activeClass("/")}`} href="/">Inicio</a>
-  <a class={`${styles.enlaces} ${activeClass("/Servicios")}`} href="/Servicios"
-    >Servicios</a
-  >
+
+  <!-- Menú desplegable para 'Servicios' -->
+  <div class={styles.dropdown}>
+    <p class={styles.enlaces}>Servicios</p>
+    <div class={styles.dropdownMenu}>
+      <a href="/desarrolloWeb" class={styles.dropdownItem}>Desarrollo Web</a>
+      <a href="/diseñoWeb" class={styles.dropdownItem}>Diseño Web</a>
+      <a href="/brandingIdentidad" class={styles.dropdownItem}
+        >Branding e Identidad</a
+      >
+    </div>
+  </div>
+
   <a class={`${styles.enlaces} ${activeClass("/contacto")}`} href="/contacto"
     >Contáctenos</a
   >
