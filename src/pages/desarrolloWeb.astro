@@ -1,7 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { IconDeviceIpadHorizontalCode } from "@tabler/icons-react";
+import styles from "../modulesCSS/viewsCSS/mainDesarrolloWeb.module.css";
 ---
 
 <Layout title="Desarrollo Web">
-  <h1>Desarrollo Web</h1>
+  <main>
+    <section class={styles.contenedor}>
+      <div class={styles.encabezado}>
+        <h1 class={styles.titulo}>Desarrollo Web</h1>
+        <p class={styles.parrafo}>
+          Creamos experiencias digitales únicas mediante el desarrollo de sitios
+          web personalizados. Desde landing pages atractivas hasta completas
+          plataformas de e-commerce y servicios online, te ayudamos a destacar
+          en el mundo digital.
+        </p>
+        <button id="button" class={styles.button}>Contáctanos</button>
+      </div>
+      <div class={styles.beneficios}>
+        </div>
+        <div class={styles.beneficio}>
+          <IconDeviceIpadHorizontalCode className={styles.icon} />
+          <p class={styles.tituloBeneficio}>Presencia Online</p>
+          
+      </div>
+      <div class={styles.beneficio}>
+        <IconDeviceIpadHorizontalCode className={styles.icon} />
+        <p class={styles.tituloBeneficio}>Optimiza la Experiencia del Usuario</p>
+        
+    </div>
+    <div class={styles.beneficio}>
+      <IconDeviceIpadHorizontalCode className={styles.icon} />
+      <p class={styles.tituloBeneficio}>Aumenta tus Ventas y Conversiones</p>
+      
+  </div>
+  <div class={styles.beneficio}>
+    <IconDeviceIpadHorizontalCode className={styles.icon} />
+    <p class={styles.tituloBeneficio}>Escalabilidad y Crecimiento Futuro</p>
+    
+</div>
+      </div>
+      <div></div>
+    </section>
+  </main>
 </Layout>
