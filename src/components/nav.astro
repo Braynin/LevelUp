@@ -14,7 +14,7 @@ const activeClass = (path: string): string => {
   <!-- Menú desplegable para 'Servicios' -->
   <div class={styles.dropdown}>
     <p class={styles.enlaces}>Servicios</p>
-    <div class={styles.dropdownMenu}>
+    <div id="dropdownMenu" class={styles.dropdownMenu}>
       <a href="/desarrolloWeb" class={styles.dropdownItem}>Desarrollo Web</a>
       <a href="/diseñoWeb" class={styles.dropdownItem}>Diseño Web</a>
       <a href="/brandingIdentidad" class={styles.dropdownItem}
@@ -27,3 +27,24 @@ const activeClass = (path: string): string => {
     >Contáctenos</a
   >
 </div>
+
+<script is:inline>
+  // Escucha el evento DOMContentLoaded para asegurarte de que el DOM está cargado.
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    if (!dropdownMenu) {
+      console.error("El elemento 'dropdownMenu' no fue encontrado.");
+      return;
+    }
+
+    // Escucha el evento de scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 90) {
+        dropdownMenu.classList.add("scrolled"); // Clase global
+      } else {
+        dropdownMenu.classList.remove("scrolled"); // Clase global
+      }
+    });
+  });
+</script>
