@@ -3,6 +3,7 @@ import { IconDeviceIpadHorizontalCode, IconDevices } from "@tabler/icons-react";
 import styles from "../modulesCSS/componentsCSS/servicios.module.css";
 ---
 
+
 <div class={styles.container}>
   <!-- Contenedor de los íconos -->
   <div class={styles.icons}>
@@ -12,6 +13,9 @@ import styles from "../modulesCSS/componentsCSS/servicios.module.css";
     <div id="design-icon" class={styles.products}>
       <IconDevices className={styles.icon} />
     </div>
+    <div id="branding-icon" class={styles.products}>
+      <IconDevices className={styles.icon} />
+    </div>
   </div>
 
   <!-- Contenedor para mostrar la información -->
@@ -19,7 +23,7 @@ import styles from "../modulesCSS/componentsCSS/servicios.module.css";
     <div id="info-box" class={styles.info}>
       <h1 id="info-title" class={styles.title}></h1>
       <p id="info-content" class={styles.text}></p>
-      <div id="button-container" class="button-container hidden">
+      <div id="button-container" class={`button-container hidden`}>
         <button id="button" class={styles.button}>Contáctanos</button>
       </div>
     </div>
@@ -39,11 +43,12 @@ import styles from "../modulesCSS/componentsCSS/servicios.module.css";
   document.addEventListener("DOMContentLoaded", () => {
     const devIcon = document.getElementById("dev-icon");
     const designIcon = document.getElementById("design-icon");
+    const brandingIcon = document.getElementById("branding-icon");
     const infoTitle = document.getElementById("info-title");
     const infoContent = document.getElementById("info-content");
 
     // Verificar que los elementos existan antes de añadir eventos
-    if (devIcon && designIcon && infoTitle && infoContent) {
+    if (devIcon && designIcon && brandingIcon && infoTitle && infoContent) {
       // Mostrar la información de "dev" por defecto
       infoTitle.innerHTML = "Creación de Sitios Web";
       infoContent.innerHTML =
@@ -61,6 +66,13 @@ import styles from "../modulesCSS/componentsCSS/servicios.module.css";
         infoTitle.innerHTML = "Diseño de Sitios Web";
         infoContent.innerHTML =
           "Diseño de sitios web atractivos y funcionales que reflejen la identidad de tu negocio.";
+      });
+
+      // Evento para branding
+      brandingIcon.addEventListener("click", () => {
+        infoTitle.innerHTML = "Branding e Identidad";
+        infoContent.innerHTML =
+          "Creamos identidades visuales y estrategias de marca que reflejen la identidad de tu negocio.";
       });
     } else {
       console.error("No se encontraron los elementos necesarios en el DOM.");
