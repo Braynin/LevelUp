@@ -1,6 +1,6 @@
 ---
 const { label } = Astro.props;
-const path = `/{label}`;
+const path = `/${label.replace(/\s+/g, "")}`;
 ---
 
 <a
