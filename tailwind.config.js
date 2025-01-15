@@ -4,6 +4,11 @@ module.exports = {
     "./src/**/*.{astro,html,js,jsx,ts,tsx,css}", // Ajusta las rutas según tu estructura de proyecto
   ],
   theme: {
+    screens: {
+      celular: { max: "950px" },
+      tablet: { min: "950px", max: "1200px" },
+      escritorio: { min: "1200px" },
+    },
     extend: {
       animation: {
         fadeInOut1: "fadeInOut1 6s ease-in-out infinite",

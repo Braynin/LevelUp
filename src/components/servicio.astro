@@ -185,14 +185,14 @@ import Button from "./button.astro";
   </div>
 
   <!-- Contenedor para mostrar la información -->
-  <div class="flex items-center justify-between gap-24">
+  <div class="flex items-center justify-between gap-24 celular:flex-col">
     <div id="info-box" class="max-w-96 p-3">
       <h1 id="info-title" class="text-4xl font-bold w-8/12"></h1>
       <p id="info-content" class="font-light pt-3 mb-9"></p>
       <Button href="/contacto">Contáctanos</Button>
     </div>
 
-    <div id="banner" class="h-full relative left-24">
+    <div id="banner" class="h-full relative left-24 celular:left-0">
       <img
         class="w-full object-cover"
         src="/service-content-1.webp"
