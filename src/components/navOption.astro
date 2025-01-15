@@ -1,20 +1,18 @@
 ---
-const { label } = Astro.props;
+//Obtener rutas de las paginas
+const { label, path } = Astro.props;
 const pathname: string = Astro.url.pathname;
 
-// Genera dinámicamente el path basado en el label
-const path =
-  label === "Inicio" ? "/" : `/${label.toLowerCase().replace(/\s+/g, "-")}`;
-
-// Aplica clases activas si el pathname es "/" (inicio) o coincide con el path generado
-const isActive = pathname === path || (label === "Inicio" && pathname === "/");
+//Calcular ruta del enlace
+const computedPath = path || (label === "Inicio" ? "/" : `/${label.toLowerCase().replace(/\s+/g, "-")}`);
+const isActive = pathname === computedPath || (label === "Inicio" && pathname === "/");
 ---
 
 <a
-  class={`font-bold  text-black  hover:text-red-600 ${
+  href={computedPath}
+  class={`font-bold text-black hover:text-red-600 ${
     isActive ? "text-blue-500 font-bold" : ""
   }`}
-  href={path}
 >
   {label}
 </a>
