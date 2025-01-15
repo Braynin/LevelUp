@@ -1,6 +1,5 @@
 ---
-//Obtener rutas de las paginas
-const { label, path } = Astro.props;
+const { label } = Astro.props;
 const pathname: string = Astro.url.pathname;
 
 // Genera dinámicamente el path basado en el label
@@ -17,10 +16,10 @@ const isActive =
 ---
 
 <a
-  href={computedPath}
-  class={`font-bold text-black hover:text-red-600 ${
+  class={`font-bold  text-black  hover:text-red-600 ${
     isActive ? "text-blue-500 font-bold" : ""
   }`}
+  href={path}
 >
   {label}
 </a>
