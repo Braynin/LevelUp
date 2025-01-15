@@ -36,12 +36,31 @@
     </div>
   </div>
 </div>
-<div class="w-full h-[300px] bg">
-  <div class="w-full bg-black">
-    <img
-      class="w-full h-full object-cover"
-      src="public\pexels-divinetechygirl-1181216-transformed.jpeg"
-      alt="desarrollo-web"
-    />
-  </div>
+<div class="w-full h-[300px]">
+  <img
+    class="w-full h-full object-cover opacity-0 animate-none transition-opacity duration-[2000ms]"
+    data-animate="true"
+    src="\StockSnap_HMPNPRBUJ7.jpg"
+    alt="desarrollo-web"
+  />
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll("[data-animate]");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "animate-pulse");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target); // Deja de observar después de la primera vez
+          }
+        });
+      },
+      { threshold: 0.1 } // Se activa cuando el 10% del elemento es visible
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  });
+</script>
