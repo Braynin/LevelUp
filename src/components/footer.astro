@@ -1,43 +1,32 @@
 ---
 import styles from "../modulesCSS/componentsCSS/footer.module.css";
+import SocialIcons from "./socialIcons.astro";
+import FooterSection from "./footerSection.astro";
 ---
 
-<footer class={styles.footer}>
-  <div class={styles["footer-top"]}>
-    <img src="logo.png" alt="LevelUp Logo" class={styles["footer-logo"]} />
-    <h2>Level Up</h2>
+<footer class="h-96 py-10 px-12 text-center text-white bg-black">
+  <div class="max-w-screen-2xl mx-auto flex">
+    <img src="logo.png" alt="Owlyx Logo" class="w-24 h-24" />
+    <h2>Owlyx</h2>
   </div>
-  <div class={styles["footer-container"]}>
-    <div class={styles["footer-section"]}>
-      <h3>SERVICIOS</h3>
-      <ul>
-        <li>Desarrollo Web</li>
-        <li>Desarrollo Móvil</li>
-        <li>Desarrollo de Escritorio</li>
-        <li>Consultoría de Software</li>
-        <li>Branding e Identidad</li>
-        <li>Activos Tecnológicos</li>
-      </ul>
-    </div>
-    <div class={styles["footer-section"]}>
-      <h3>UBICACIÓN</h3>
-      <p>Av. Aquisito Noma 6496, Cercado de Lima</p>
-    </div>
-    <div class={styles["footer-section"]}>
-      <h3>CONTACTO</h3>
-      <p>+51 941 444 077</p>
-      <p>hola@invadion.com</p>
-    </div>
-    <div class={styles["footer-section"]}>
-      <h3>REDES SOCIALES</h3>
-      <div class={styles["social-icons"]}>
-        <a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
-        <a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
-        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" /></a>
-      </div>
-    </div>
+  <div class="max-w-screen-2xl mx-auto flex justify-around flex-wrap">
+    <FooterSection header="SERVICIOS">
+      <li class="list-none mb-1">Creación de Sitios Web</li>
+      <li class="list-none mb-1">Diseño de Sitios Web</li>
+      <li class="list-none mb-1">Branding e Identidad</li>
+    </FooterSection>
+    <FooterSection header="UBICACIÓN">
+      <p class="mb-1">Av. Aquisito Noma 6496, Cercado de Lima</p>
+    </FooterSection>
+    <FooterSection header="CONTACTO">
+      <p class="mb-1">+51 941 444 077</p>
+      <p class="mb-1">hola@invadion.com</p>
+    </FooterSection>
+    <FooterSection header="REDES SOCIALES">
+      <SocialIcons />
+    </FooterSection>
   </div>
-  <div class={styles["footer-bottom"]}>
-    <p>©2025 Level Up S.A.C Todos los derechos reservados</p>
+  <div class="max-w-6xl mx-auto mt-5 text-sm">
+    <p>©2025 Owlyx S.A.C Todos los derechos reservados</p>
   </div>
 </footer>

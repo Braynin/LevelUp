@@ -1,36 +1,40 @@
 ---
-import styles from "../modulesCSS/componentsCSS/animatedHeadings.module.css";
+import Button from "./button.astro";
 ---
 
-<div class={styles["Hero-Container"]}>
-  <div class={styles["Hero-Text"]}>
-    <div class={styles["h1-container"]}>
-      <h1 class={`${styles.h1} ${styles["animate-1"]}`}>Desarrollo Web</h1>
-      <h1 class={`${styles.h1} ${styles["animate-2"]}`}>Diseño Web</h1>
+<div class="flex items-center">
+  <div class="flex flex-col items-center w-1/2 pt-10 gap-7">
+    <div class="flex flex-col w-3/5 relative">
+      <h1 class="text-5xl font-bold w-full animate-fadeInOut1">
+        Desarrollo Web
+      </h1>
+      <h1 class="text-5xl font-bold w-full animate-fadeInOut2 absolute">
+        Diseño Web
+      </h1>
     </div>
-    <div class={styles["concept-container"]}>
-      <p class={`${styles.concept} ${styles["animate-1"]}`}>
+    <div class="flex flex-col w-3/5 relative">
+      <p class="text-base text-justify w-full animate-fadeInOut1">
         Somos un equipo de expertos en desarrollo web y diseño web que se
         especializa en la creación de sitios web atractivos y funcionales que
         reflejen la identidad de tu negocio.
       </p>
-      <p class={`${styles.concept} ${styles["animate-2"]}`}>
+      <p class="text-base text-justify w-full animate-fadeInOut2 absolute">
         Nuestro enfoque se basa en la creación de sitios web que reflejen la
         identidad de tu negocio y que sean fáciles de navegar y usar.
       </p>
     </div>
-    <div class={styles["button-container"]}>
-      <a class={`${styles.button} ${styles["animate-1"]}`} href="/contacto">
-        Contáctanos
-      </a>
-      <a class={`${styles.button} ${styles["animate-2"]}`} href="/contacto">
-        Contáctanos
-      </a>
+    <div class="flex flex-col w-3/5 relative">
+      <Button href="/contacto" classList="w-1/3 animate-fadeInOut1 "
+        >Contáctanos</Button
+      >
+      <Button href="/contacto" classList="w-1/3 animate-fadeInOut2 absolute"
+        >Contáctanos</Button
+      >
     </div>
   </div>
 
   <img
-    class={styles["hero-image"]}
+    class="w-1/2"
     src="https://via.placeholder.com/400x400"
     alt="Imagen de ejemplo"
   />

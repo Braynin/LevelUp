@@ -1,0 +1,29 @@
+---
+const { label, type, name, id, isTextarea } = Astro.props;
+---
+
+<div>
+  <label for={id}>
+    {
+      isTextarea ? (
+        <textarea
+          class="w-full h-12 px-4 py-2.5 rounded-md border border-gray-300 placeholder:text-[#666666b2] focus:border-[#333]"
+          id={id}
+          name={name}
+          rows="4"
+          required
+          placeholder={label}
+        />
+      ) : (
+        <input
+          class="w-full h-12 px-4 rounded-md border border-gray-300 placeholder:text-[#666666b2] focus:border-[#333]"
+          type={type}
+          id={id}
+          name={name}
+          required
+          placeholder={label}
+        />
+      )
+    }
+  </label>
+</div>

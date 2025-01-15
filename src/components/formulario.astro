@@ -1,67 +1,23 @@
 ---
-import styles from "../modulesCSS/componentsCSS/formulario.module.css";
+import FormOption from "./formOption.astro";
+import Button from "./button.astro";
 ---
 
-<div class={styles.formulario}>
-  <img class={styles.img} src="/img/formulario.png" alt="img-formulario" />
-  <div class={styles.form}>
-    <h2>ESCRÍBENOS</h2>
-    <form class="styles.form">
-      <div class={styles["form-group"]}>
-        <label for="nombre">
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            required
-            placeholder="Nombre:"
-          />
-        </label>
-      </div>
-      <div class={styles["form-group"]}>
-        <label for="empresa">
-          <input
-            type="text"
-            id="empresa"
-            name="empresa"
-            required
-            placeholder="Empresa:"
-          />
-        </label>
-      </div>
-      <div class={styles["form-group"]}>
-        <label for="correo"
-          ><input
-            type="email"
-            id="correo"
-            name="correo"
-            required
-            placeholder="Correo:"
-          /></label
-        >
-      </div>
-      <div class={styles["form-group"]}>
-        <label for="telefono"
-          ><input
-            type="tel"
-            id="telefono"
-            name="telefono"
-            required
-            placeholder="Teléfono:"
-          /></label
-        >
-      </div>
-      <div class={styles["form-group"]}>
-        <label for="mensaje"
-          ><textarea
-            id="mensaje"
-            name="mensaje"
-            rows="4"
-            required
-            placeholder="Mensaje"></textarea></label
-        >
-      </div>
-      <button type="submit" class={styles.btn}>Enviar</button>
+<div class="w-full flex justify-center items-center bg-[#ffd500] py-8">
+  <img
+    class="w-1/2 object-cover"
+    src="/img/formulario.png"
+    alt="img-formulario"
+  />
+  <div class="max-w-96 w-1/2">
+    <h2 class="text-3xl font-bold my-4">ESCRÍBENOS</h2>
+    <form class="flex flex-col gap-5">
+      <FormOption label="Nombre:" type="text" name="nombre" id="nombre" />
+      <FormOption label="Empresa:" type="text" name="empresa" id="empresa" />
+      <FormOption label="Correo:" type="email" name="correo" id="correo" />
+      <FormOption label="Teléfono:" type="tel" name="telefono" id="telefono" />
+      <FormOption label="Mensaje:" isTextarea name="mensaje" id="mensaje" />
+      <Button type="submit">ENVIAR</Button>
     </form>
   </div>
 </div>

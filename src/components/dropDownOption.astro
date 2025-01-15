@@ -1,0 +1,10 @@
+---
+const { label } = Astro.props;
+const path = `/{label}`;
+---
+
+<a
+  href={path}
+  class="font-semibold px-5 py-2 no-underline text-black block hover:bg-white hover:text-red-600"
+  >{label}</a
+>

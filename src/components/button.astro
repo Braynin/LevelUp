@@ -1,0 +1,21 @@
+---
+const { href, type, classList } = Astro.props;
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class={`w-2/5 py-2 px-5 bg-transparent text-black text-base font-bold border-2 border-black hover:bg-black hover:text-white ${classList || ""}`}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button
+      type={type}
+      class={`w-2/5 py-2 px-5 bg-transparent text-black text-base font-bold border-2 border-black hover:bg-black hover:text-white ${classList || ""}`}
+    >
+      <slot />
+    </button>
+  )
+}
