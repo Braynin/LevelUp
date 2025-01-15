@@ -2,7 +2,7 @@
 const { header } = Astro.props;
 ---
 
-<div class="max-w-48 m-2 text-left">
+<div class={`max-w-48 m-2 text-left `}>
   <h3 class="text-xl mb-3">{header}</h3>
   <slot />
 </div>
