@@ -4,7 +4,7 @@ import Nav from "./nav.astro";
 
 <header
   id="header"
-  class="w-full h-14 flex justify-around items-center bg-transparent fixed shadow-lg z-50"
+  class="w-full h-14 flex justify-around items-center bg-transparent fixed z-50 transition duration-300 ease-in-out"
 >
   <a href="/"> <img src="logo.png" alt="Owlyx Logo" class="w-10 h-10" /></a>
   <Nav />
@@ -20,6 +20,21 @@ import Nav from "./nav.astro";
         document.addEventListener("DOMContentLoaded", () => {
           addScrollClass("header", 90);
         });
+        // Reiniciar el menú desplegable al cambiar de ruta
+        window.addEventListener("popstate", resetDropdownMenu);
+        window.addEventListener("pushstate", resetDropdownMenu);
+
+        function resetDropdownMenu() {
+          const dropdownMenu = document.getElementById("dropdownMenu");
+          if (dropdownMenu) {
+            dropdownMenu.classList.add("opacity-0", "translate-y-2", "hidden");
+            dropdownMenu.classList.remove(
+              "opacity-100",
+              "translate-y-12",
+              "block"
+            );
+          }
+        }
       })
       .catch((error) => {
         console.error("Error al cargar ScrollHandler.js:", error);

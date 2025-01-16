@@ -6,7 +6,7 @@ const { href, type, classList } = Astro.props;
   href ? (
     <a
       href={href}
-      class={`text-center w-2/5 py-2 bg-transparent text-black text-base font-bold border-2 border-black hover:bg-black hover:text-white ${classList || ""}`}
+      class={`text-center block w-2/5 py-2 bg-transparent text-black text-base font-bold border-2 border-black hover:bg-black hover:text-white ${classList || ""}`}
     >
       <slot />
     </a>
