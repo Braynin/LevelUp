@@ -7,7 +7,7 @@ const { label, type, name, id, isTextarea } = Astro.props;
     {
       isTextarea ? (
         <textarea
-          class="w-full h-12 px-4 py-2.5 rounded-md border border-gray-300 placeholder:text-[#666666b2] focus:border-[#333]"
+          class="celular:h-8  w-full h-12 px-4 py-2.5 rounded-md border border-gray-300 placeholder:text-[#666666b2] focus:border-[#333]"
           id={id}
           name={name}
           rows="4"
@@ -16,7 +16,7 @@ const { label, type, name, id, isTextarea } = Astro.props;
         />
       ) : (
         <input
-          class="w-full h-12 px-4 rounded-md border border-gray-300 placeholder:text-[#666666b2] focus:border-[#333]"
+          class="celular:h-8 w-full h-12 px-4 rounded-md border border-gray-300 placeholder:text-[#666666b2] focus:border-[#333]"
           type={type}
           id={id}
           name={name}

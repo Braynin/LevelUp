@@ -3,13 +3,15 @@ import Button from "./button.astro";
 ---
 
 <div
-  class="w-full h-[750px] flex flex-col items-center justify-center gap-5 p-5 my-10"
+  class="celular:h-[450px] w-full h-[750px] flex flex-col items-center justify-center gap-5 p-5 my-10"
 >
   <!-- Contenedor de los íconos -->
-  <div class="flex w-2/5 py-5 justify-between items-center">
+  <div
+    class="celular:w-full celular:justify-around flex w-2/5 py-2 justify-between items-center"
+  >
     <div
       id="dev-icon"
-      class="max-w-96  cursor-pointer transition-transform hover:scale-110 flex flex-col aling-center justify-center   relative"
+      class="celular:w-14 w-20 cursor-pointer transition-transform hover:scale-110"
     >
       <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
         ><defs
@@ -59,7 +61,7 @@ import Button from "./button.astro";
     </div>
     <div
       id="design-icon"
-      class=" w-28  cursor-pointer transition-transform hover:scale-110  flex flex-col aling-center justify-center   relative"
+      class="celular:w-14 w-20 cursor-pointer transition-transform hover:scale-110"
     >
       <svg class="mb-2"
         id="_1-App"
@@ -138,7 +140,7 @@ import Button from "./button.astro";
     </div>
     <div
       id="branding-icon"
-      class="w-28  cursor-pointer transition-transform hover:scale-110"
+      class="celular:w-14 w-20 cursor-pointer transition-transform hover:scale-110"
     >
       <svg class="mb-2"
         xmlns="http://www.w3.org/2000/svg"
@@ -188,16 +190,24 @@ import Button from "./button.astro";
   </div>
 
   <!-- Contenedor para mostrar la información -->
-  <div class="flex items-center justify-between gap-24 celular:flex-col mt-20">
-    <div id="info-box" class="max-w-96 p-3">
-      <h1 id="info-title" class="text-4xl font-bold w-8/12"></h1>
-      <p id="info-content" class="font-light pt-3 mb-9"></p>
+  <div class="flex items-center justify-between">
+    <div id="info-box" class="w-1/2 celular:h-[300px]">
+      <h1 id="info-title" class="text-4xl font-bold w-3/5 celular:text-2xl">
+      </h1>
+      <p id="info-content" class="font-light pt-3 mb-9 w-3/5 celular:text-sm">
+      </p>
       <Button href="/contacto">Contáctanos</Button>
     </div>
 
-    <div id="banner" class="h-full relative left-24 celular:left-0">
-      
-      <div class="w-full h-3/4 absolute bottom-0 right-0 bg-[#fdd800] -z-10">
+    <div id="banner" class="h-full relative w-1/2">
+      <img
+        class="w-full object-cover"
+        src="/service-content-1.webp"
+        alt="img-servicios"
+      />
+      <div
+        class="celular:h-2/4 w-full h-3/4 absolute bottom-0 right-0 bg-[#fdd800] -z-10"
+      >
       </div>
     </div>
   </div>
