@@ -1,36 +1,17 @@
 ---
 import NavOption from "./navOption.astro";
 import DropDownOption from "./dropDownOption.astro";
-
-// Astro no permite directamente el uso de funciones como en un framework React o Vue.
-// Necesitamos incluir el manejo de estado en un script del lado del cliente.
+import { IconMenu2 } from "@tabler/icons-react";
 ---
 
-<!-- Botón del menú hamburguesa -->
-<button 
-  class="tablet:hidden text-gray-700 focus:outline-none" 
-  id="menuToggle"
->
-  <svg
-    class="w-6 h-6"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M4 6h16M4 12h16m-7 6h7"
-    ></path>
-  </svg>
-</button>
-
-<!-- Contenedor del menú de navegación -->
-<div 
-  id="navMenu"
-  class="w-full flex-col tablet:flex-row tablet:flex items-center absolute tablet:static top-14 left-0 bg-white tablet:bg-transparent shadow-lg tablet:shadow-none transition-transform duration-300 hidden"
+<div class="hidden celular:block">
+  <div id="menuIcon" class="cursor-pointer">
+    <IconMenu2 stroke={2} />
+  </div>
+</div>
+<div
+  id="menu"
+  class="celular:translate-x-full celular:duration-300 celular:flex-col celular:items-center celular:w-full celular:h-[200px] celular:justify-around celular:absolute celular:top-[56px] celular:right-0 celular:bg-white w-1/3 flex justify-between items-center"
 >
   <!-- Opción de navegación: Inicio -->
   <NavOption label="Inicio" />
@@ -40,11 +21,11 @@ import DropDownOption from "./dropDownOption.astro";
     <NavOption label="Servicios" />
     <div
       id="dropdownMenu"
-      class="hidden absolute top-1 left-0 bg-white shadow-lg z-10 min-w-48 rounded-md opacity-0 translate-y-2 transition-opacity duration-300 ease-in-out group-hover:block group-hover:opacity-100 group-hover:translate-y-12 group-focus:opacity-100 group-focus:translate-y-12 group-focus:block"
+      class="hidden absolute top-1 -left-5 bg-white shadow-lg z-10 min-w-48 rounded-md opacity-0 translate-y-2 transition-opacity duration-300 ease-in-out group-hover:block group-hover:opacity-100 group-hover:translate-y-12 group-focus:opacity-100 group-focus:translate-y-12 group-focus:block"
     >
       <!-- Opciones del menú desplegable -->
       <DropDownOption label="Creación de Sitios Web" />
-      <DropDownOption label="Diseño de Sitios" />
+      <DropDownOption label="Diseño de Sitios Web" />
       <DropDownOption label="Branding e Identidad" />
     </div>
   </div>
@@ -52,31 +33,41 @@ import DropDownOption from "./dropDownOption.astro";
   <!-- Opción de navegación: Contacto -->
   <NavOption label="Contacto" />
 </div>
-
 <script>
-  // Seleccionamos el botón y el menú
-  const menuToggle = document.getElementById("menuToggle");
-  const navMenu = document.getElementById("navMenu");
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuIconDiv = document.getElementById("menuIcon");
+    const menuDiv = document.getElementById("menu");
 
-  // Inicializamos el estado
-  let isMenuOpen = false;
+    // Verificar si los elementos existen
+    if (!menuIconDiv || !menuDiv) {
+      console.error(
+        "El elemento con ID 'menuIcon' o 'menu' no fue encontrado."
+      );
+      return;
+    }
 
-  // Verificamos si el botón existe antes de agregar el evento de clic
-  if (menuToggle&&navMenu) {
-    // Función para alternar el estado
-    menuToggle.addEventListener("click", () => {
+    let isMenuOpen = false;
+
+    // Función para alternar el estado del menú
+    const toggleMenu = () => {
       isMenuOpen = !isMenuOpen;
 
-      // Agregamos o removemos clases según el estado
+      // Cambiar el icono
+      menuIconDiv.innerHTML = isMenuOpen
+        ? `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>`
+        : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>`;
+
+      // Mostrar u ocultar el menú
       if (isMenuOpen) {
-        navMenu.classList.remove("hidden");
-        navMenu.classList.add("flex");
+        menuDiv.classList.remove("celular:translate-x-full");
+        menuDiv.classList.add("translate-x-0");
       } else {
-        navMenu.classList.remove("flex");
-        navMenu.classList.add("hidden");
+        menuDiv.classList.remove("translate-x-0");
+        menuDiv.classList.add("celular:translate-x-full");
       }
-    });
-  } else {
-    console.error("Elemento con ID 'menuToggle' no encontrado");
-  }
+    };
+
+    // Escuchar clic en el ícono del menú
+    menuIconDiv.addEventListener("click", toggleMenu);
+  });
 </script>
