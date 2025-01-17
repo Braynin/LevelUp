@@ -10,34 +10,36 @@ import Nav from "./nav.astro";
   <Nav />
 </header>
 
-<script is:inline>
-  // Asegúrate de que el script se ejecute en el cliente
+<script is:inline defer>
   if (typeof window !== "undefined") {
-    // Carga dinámica del archivo JS
-    import("/src/utils/ScrollHandler.js")
+    function initializeScript() {
+      try {
+        const element = document.getElementById("header");
 
-      .then(({ default: addScrollClass }) => {
-        document.addEventListener("DOMContentLoaded", () => {
-          addScrollClass("header", 90);
-        });
-        // Reiniciar el menú desplegable al cambiar de ruta
-        window.addEventListener("popstate", resetDropdownMenu);
-        window.addEventListener("pushstate", resetDropdownMenu);
-
-        function resetDropdownMenu() {
-          const dropdownMenu = document.getElementById("dropdownMenu");
-          if (dropdownMenu) {
-            dropdownMenu.classList.add("opacity-0", "translate-y-2", "hidden");
-            dropdownMenu.classList.remove(
-              "opacity-100",
-              "translate-y-12",
-              "block"
-            );
-          }
+        if (!element) {
+          console.error("El elemento con ID 'header' no fue encontrado.");
+          return;
         }
-      })
-      .catch((error) => {
-        console.error("Error al cargar ScrollHandler.js:", error);
-      });
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY >= 90) {
+            element.classList.add("bg-white", "shadow-md");
+          } else {
+            element.classList.remove("bg-white", "shadow-md");
+          }
+        });
+      } catch (error) {
+        console.error("Error al ejecutar el script:", error);
+      }
+    }
+
+    // Inicializar el script al cargar la página
+    document.addEventListener("DOMContentLoaded", initializeScript);
+
+    // Reiniciar el script cuando se cambie la ruta
+    window.addEventListener("popstate", () => {
+      // Vuelve a cargar el script cuando se detecta un cambio de ruta
+      initializeScript();
+    });
   }
 </script>
