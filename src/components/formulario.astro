@@ -6,14 +6,16 @@ import Button from "./button.astro";
 <div
   class="celular:h-full celular:flex-col w-full flex justify-center items-center bg-[#ffd500] py-8"
 >
-  <img
-    class="w-1/2 object-cover"
-    src="/img/formulario.png"
-    alt="img-formulario"
-  />
+  <div class="w-1/2 flex items-center justify-center">
+    <img
+      class="w-3/4 shadow-xl"
+      src="\StockSnap_NQP6JNLYFI.jpg"
+      alt="img-formulario"
+    />
+  </div>
   <div class="w-1/2">
     <h2 class="text-3xl font-bold my-4">ESCRÍBENOS</h2>
-    <form class="flex flex-col gap-5">
+    <form class="celular:w-full flex flex-col gap-5 w-3/4">
       <FormOption label="Nombre:" type="text" name="nombre" id="nombre" />
       <FormOption label="Empresa:" type="text" name="empresa" id="empresa" />
       <FormOption label="Correo:" type="email" name="correo" id="correo" />

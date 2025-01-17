@@ -3,16 +3,18 @@ import SocialIcons from "./socialIcons.astro";
 import FooterSection from "./footerSection.astro";
 ---
 
-<footer class="h-full py-10 px-12 text-center text-white bg-black">
+<footer class="h-full celular:px-8 py-10 px-40 text-center text-white bg-black">
   <div class="max-w-screen-2xl mx-auto flex">
     <img src="logo.png" alt="Owlyx Logo" class="w-24 h-24" />
     <h2>Owlyx</h2>
   </div>
-  <div class="max-w-screen-2xl mx-auto flex justify-around flex-wrap">
+  <div
+    class="celularPequeno:flex-col celularPequeno:items-center max-w-screen-2xl mx-auto flex justify-between flex-wrap"
+  >
     <FooterSection header="SERVICIOS">
-      <li class="list-none mb-1">Creación de Sitios Web</li>
-      <li class="list-none mb-1">Diseño de Sitios Web</li>
-      <li class="list-none mb-1">Branding e Identidad</li>
+      <a class="mb-1" href="/CreacióndeSitiosWeb">Creación de Sitios Web</a>
+      <a class="mb-1" href="/DiseñodeSitios">Diseño de Sitios Web</a>
+      <a class="mb-1" href="/BrandingeIdentidad">Branding e Identidad</a>
     </FooterSection>
     <FooterSection header="UBICACIÓN">
       <p class="mb-1">Av. Aquisito Noma 6496, Cercado de Lima</p>

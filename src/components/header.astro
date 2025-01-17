@@ -4,25 +4,42 @@ import Nav from "./nav.astro";
 
 <header
   id="header"
-  class="w-full h-14 flex justify-around items-center bg-transparent fixed shadow-lg z-50"
+  class="w-full h-14 flex justify-around items-center bg-transparent fixed z-50 transition duration-300 ease-in-out"
 >
   <a href="/"> <img src="logo.png" alt="Owlyx Logo" class="w-10 h-10" /></a>
   <Nav />
 </header>
 
-<script is:inline>
-  // Asegúrate de que el script se ejecute en el cliente
+<script is:inline defer>
   if (typeof window !== "undefined") {
-    // Carga dinámica del archivo JS
-    import("/src/utils/ScrollHandler.js")
+    function initializeScript() {
+      try {
+        const element = document.getElementById("header");
 
-      .then(({ default: addScrollClass }) => {
-        document.addEventListener("DOMContentLoaded", () => {
-          addScrollClass("header", 90);
+        if (!element) {
+          console.error("El elemento con ID 'header' no fue encontrado.");
+          return;
+        }
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY >= 90) {
+            element.classList.add("bg-white", "shadow-md");
+          } else {
+            element.classList.remove("bg-white", "shadow-md");
+          }
         });
-      })
-      .catch((error) => {
-        console.error("Error al cargar ScrollHandler.js:", error);
-      });
+      } catch (error) {
+        console.error("Error al ejecutar el script:", error);
+      }
+    }
+
+    // Inicializar el script al cargar la página
+    document.addEventListener("DOMContentLoaded", initializeScript);
+
+    // Reiniciar el script cuando se cambie la ruta
+    window.addEventListener("popstate", () => {
+      // Vuelve a cargar el script cuando se detecta un cambio de ruta
+      initializeScript();
+    });
   }
 </script>

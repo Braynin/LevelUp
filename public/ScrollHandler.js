@@ -7,7 +7,7 @@ export default function addScrollClass(elementId, scrollThreshold) {
   }
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > scrollThreshold) {
+    if (window.scrollY >= scrollThreshold) {
       element.classList.add("bg-white", "shadow-md");
     } else {
       element.classList.remove("bg-white", "shadow-md");

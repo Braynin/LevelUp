@@ -3,7 +3,7 @@ import Button from "./button.astro";
 ---
 
 <div
-  class="celular:h-[450px] w-full h-[750px] flex flex-col items-center justify-center gap-5 p-5 my-10"
+  class="celular:h-full w-full h-[750px] flex flex-col items-center justify-center gap-5 my-10"
 >
   <!-- Contenedor de los íconos -->
   <div
@@ -190,16 +190,22 @@ import Button from "./button.astro";
   </div>
 
   <!-- Contenedor para mostrar la información -->
-  <div class="flex items-center justify-between">
-    <div id="info-box" class="w-1/2 celular:h-[300px]">
-      <h1 id="info-title" class="text-4xl font-bold w-3/5 celular:text-2xl">
+  <div class="celular:w-full flex items-center justify-center w-3/5">
+    <div
+      id="info-box"
+      class="celular:w-full celular:flex celular:flex-col celular:items-center celular:justify-center w-1/2"
+    >
+      <h1 id="info-title" class="text-4xl font-bold w-[300px] celular:text-2xl">
       </h1>
-      <p id="info-content" class="font-light pt-3 mb-9 w-3/5 celular:text-sm">
+      <p
+        id="info-content"
+        class="font-light pt-3 mb-9 w-[300px] celular:text-sm"
+      >
       </p>
-      <Button href="/contacto">Contáctanos</Button>
+      <Button href="/contacto" classList="w-1/3">Contáctanos</Button>
     </div>
 
-    <div id="banner" class="h-full relative w-1/2">
+    <div id="banner" class="celular:hidden h-full relative w-1/2">
       <img
         class="w-full object-cover"
         src="/service-content-1.webp"

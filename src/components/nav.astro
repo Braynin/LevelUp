@@ -1,52 +1,26 @@
 ---
 import NavOption from "./navOption.astro";
 import DropDownOption from "./dropDownOption.astro";
-
-// Definimos las rutas del proyecto
-const routes = {
-  Inicio: "/",
-  Servicios: "/",
-  Contacto: "/contacto",
-  "Creación de Sitios Web": "/desarrolloWeb",
-  "Diseño de Sitios": "/diseñoWeb",
-  "Branding e Identidad": "/brandingIdentidad",
-};
 ---
 
 <div class="w-1/3 flex justify-around items-center">
   <!-- Opción de navegación: Inicio -->
-  <NavOption label="Inicio" path={routes["Inicio"]} />
+  <NavOption label="Inicio" />
 
   <!-- Menú desplegable para 'Servicios' -->
   <div class="py-4 relative inline-block group">
-    <NavOption label="Servicios" path={routes["Servicios"]} />
+    <NavOption label="Servicios" />
     <div
       id="dropdownMenu"
-      class="hidden absolute top-0 left-0 bg-white shadow-lg z-10 min-w-48 rounded-b-lg py-2 opacity-0 translate-y-2 group-hover:block group-hover:opacity-100 group-hover:translate-y-12"
+      class="hidden absolute top-1 left-0 bg-white shadow-lg z-10 min-w-48 rounded-md opacity-0 translate-y-2 transition-opacity duration-300 ease-in-out group-hover:block group-hover:opacity-100 group-hover:translate-y-12 group-focus:opacity-100 group-focus:translate-y-12 group-focus:block"
     >
       <!-- Opciones del menú desplegable -->
-      <DropDownOption label="Creación de Sitios Web" path={routes["Creación de Sitios Web"]} />
-      <DropDownOption label="Diseño de Sitios" path={routes["Diseño de Sitios"]} />
-      <DropDownOption label="Branding e Identidad" path={routes["Branding e Identidad"]} />
+      <DropDownOption label="Creación de Sitios Web" />
+      <DropDownOption label="Diseño de Sitios" />
+      <DropDownOption label="Branding e Identidad" />
     </div>
   </div>
 
   <!-- Opción de navegación: Contacto -->
-  <NavOption label="Contacto" path={routes["Contacto"]} />
+  <NavOption label="Contacto" />
 </div>
-
-<script is:inline>
-  // Asegúrate de que el script se ejecute en el cliente
-  if (typeof window !== "undefined") {
-    // Carga dinámica del archivo JS
-    import("/src/utils/ScrollHandler.js")
-      .then(({ default: addScrollClass }) => {
-        document.addEventListener("DOMContentLoaded", () => {
-          addScrollClass("dropdownMenu", 90);
-        });
-      })
-      .catch((error) => {
-        console.error("Error al cargar ScrollHandler.js:", error);
-      });
-  }
-</script>
