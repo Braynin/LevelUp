@@ -5,8 +5,8 @@ module.exports = {
   ],
   theme: {
     screens: {
-      celular: { max: "950px" },
-      tablet: { min: "950px", max: "1200px" },
+      celular: { max: "850px" },
+      tablet: { min: "850px", max: "1200px" },
       escritorio: { min: "1200px" },
     },
     extend: {
