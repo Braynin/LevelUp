@@ -10,6 +10,9 @@ module.exports = {
       escritorio: { min: "1200px" },
     },
     extend: {
+      backgroundImage: {
+        imgnDesarrolloWeb: "url('/imagen_desarrolloweb.jpg')",
+      },
       animation: {
         fadeInOut1: "fadeInOut1 6s ease-in-out infinite",
         fadeInOut2: "fadeInOut2 6s ease-in-out infinite",
