@@ -2,14 +2,18 @@
 import Button from "./button.astro";
 ---
 
-<div class="mb-5 tablet:mb-0 flex flex-col items-center justify-center h-screen p-5 tablet:p-0 bg-gray-100 celularPequeno:mb-3 celularPequeno:pl-0 celularPequeno:pr-0">
-  <div class=" flex flex-row   items-center justify-center  gap-5 w-3/4 h-[80vh] celular:w-full celular:h-auto celular:mx-0 celular:px-0 celular:flex-col tablet:w-full tablet:h-auto tablet:mx-0 tablet:px-0 tablet:flex-col">
+<div
+  class="mb-5 tablet:mb-0 flex flex-col items-center justify-center h-full p-5 tablet:p-0 bg-gray-100 celular:mb-3 celular:pl-0 celular:pr-0"
+>
+  <div
+    class="flex flex-row items-center justify-center gap-5 w-3/4 h-[80vh] celular:w-full celular:h-auto celular:mx-0 celular:px-0 celular:flex-col tablet:w-full tablet:h-auto tablet:mx-0 tablet:px-0 tablet:flex-col"
+  >
     <!-- Contenedor más grande -->
     <div
-      class="flex flex-col items-start justify-center p-10  bg-white max-w-lg celularPequeno:w-full celularPequeno:p-5"
+      class="flex flex-col items-start justify-center p-10 bg-white max-w-lg celular:items-center celular:w-full celular:p-5"
     >
       <h1
-        class="text-5xl p-2 font-bold mb-6 text-black font-poppins bg-yellow-400 celularPequeno:text-4xl "
+        class="text-5xl p-2 font-bold mb-6 text-black font-poppins bg-yellow-400 celular:text-4xl"
       >
         Contáctanos
       </h1>
@@ -20,21 +24,22 @@ import Button from "./button.astro";
 
       <Button href="/contacto">Contáctanos</Button>
     </div>
-    <div class="relative overflow-hidden w-3/4 h-full celular:w-full tablet:w-full tablet:pt-10">
+    <div
+      class="relative overflow-hidden w-3/4 h-full celular:w-full tablet:w-full tablet:pt-10"
+    >
       <!-- Imagen para pantallas móviles -->
       <img
         class="overflow-hidden celular:block hidden w-full h-full object-cover tablet:block tablet:w-full tablet:h-full"
         src="/Contacto-w.webp"
         alt="img-servicios"
       />
-    
+
       <!-- Imagen para pantallas no móviles (escritorio, tablet, etc.) -->
       <img
-        class="w-full h-full object-cover celularPequeno:hidden celular:hidden tablet:hidden"
-        src="/service-content-1.webp"
+        class="w-full h-full object-cover celular:hidden tablet:hidden"
+        src="/imagen_servicios.webp"
         alt="img-servicios"
       />
     </div>
-    
   </div>
 </div>

@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         imgnDesarrolloWeb: "url('/imagen_desarrolloweb.jpg')",
+        imgnDiseñoWeb: "url('/imagen_diseñoweb.jpg')",
       },
       animation: {
         fadeInOut1: "fadeInOut1 6s ease-in-out infinite",
