@@ -3,7 +3,7 @@ import Button from "./button.astro";
 ---
 
 <div
-  class="mb-5 tablet:mb-0 flex flex-col items-center justify-center h-full p-5 tablet:p-0 bg-gray-100 celular:mb-3 celular:pl-0 celular:pr-0"
+  class="mb-5 tablet:mb-0 flex flex-col items-center justify-center h-full p-5 tablet:p-0 celular:mb-3 celular:pl-0 celular:pr-0"
 >
   <div
     class="flex flex-row items-center justify-center gap-5 w-3/4 h-[80vh] celular:w-full celular:h-auto celular:mx-0 celular:px-0 celular:flex-col tablet:w-full tablet:h-auto tablet:mx-0 tablet:px-0 tablet:flex-col"
@@ -25,19 +25,19 @@ import Button from "./button.astro";
       <Button href="/contacto">Contáctanos</Button>
     </div>
     <div
-      class="relative overflow-hidden w-3/4 h-full celular:w-full tablet:w-full tablet:pt-10"
+      class="relative overflow-hidden h-full celular:w-full tablet:w-full tablet:pt-10"
     >
       <!-- Imagen para pantallas móviles -->
       <img
         class="overflow-hidden celular:block hidden w-full h-full object-cover tablet:block tablet:w-full tablet:h-full"
-        src="../contacto.webp"
+        src="../imagen_contactoherocelular.webp"
         alt="img-contacto"
       />
 
       <!-- Imagen para pantallas no móviles (escritorio, tablet, etc.) -->
       <img
         class="w-full h-full object-cover celularPequeno:hidden celular:hidden tablet:hidden"
-        src="../imagen_contacto.webp"
+        src="../imagen_contactohero.webp"
         alt="img-servicios"
       />
     </div>

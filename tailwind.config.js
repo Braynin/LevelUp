@@ -11,8 +11,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        imgnDesarrolloWeb: "url('/imagen_desarrolloweb.jpg')",
-        imgnDiseñoWeb: "url('/imagen_diseñoweb.jpg')",
+        imgnDesarrolloWeb: "url('/imagen_desarrolloweb.webp')",
+        imgnDesarrolloWebCelular: "url('/imagen_desarrollowebcelular.webp')",
+        imgnDiseñoWeb: "url('/imagen_diseñoweb.webp')",
       },
       animation: {
         fadeInOut1: "fadeInOut1 6s ease-in-out infinite",
