@@ -3,22 +3,20 @@ const { label } = Astro.props;
 const pathname = decodeURIComponent(Astro.url.pathname);
 
 // Genera dinámicamente el path basado en el label
-const path =
-  label === "Inicio" ? "/" : `/${label.toLowerCase().replace(/\s+/g, "-")}`;
+const path = label === "Inicio" ? "/" : `/${label}/`;
 
 // Aplica clases activas si el pathname es "/" (inicio) o coincide con el path generado
 const isActive =
   pathname === path ||
-  (label === "Inicio" && pathname === "/") ||
   (label === "Servicios" &&
-    (pathname === "/CreacióndeSitiosWeb" ||
-      pathname === "/DiseñodeSitiosWeb" ||
-      pathname === "/BrandingeIdentidad"));
+    (pathname === "/CreacióndeSitiosWeb/" ||
+      pathname === "/DiseñodeSitiosWeb/" ||
+      pathname === "/BrandingeIdentidad/"));
 ---
 
 <a
-  class={`cursor-pointer peer font-bold   hover:text-black ${
-    isActive ? "text-blue-800" : " text-gray-700"
+  class={`cursor-pointer peer font-bold  hover:text-black ${
+    isActive ? "text-blue-800" : " text-gray-700 "
   }`}
   {...label === "Servicios" ? {} : { href: path }}
 >
