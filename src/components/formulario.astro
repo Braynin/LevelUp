@@ -15,7 +15,7 @@ import Button from "./button.astro";
   </div>
   <div class="w-1/2">
     <h2 class="text-3xl font-bold my-4">ESCRÍBENOS</h2>
-    <form class="celular:w-full flex flex-col gap-5 w-3/4">
+    <form class="celular:w-full flex flex-col gap-5 w-3/4" id="contact-form">
       <FormOption label="Nombre:" type="text" name="nombre" id="nombre" />
       <FormOption label="Empresa:" type="text" name="empresa" id="empresa" />
       <FormOption label="Correo:" type="email" name="correo" id="correo" />
@@ -25,3 +25,34 @@ import Button from "./button.astro";
     </form>
   </div>
 </div>
+<script is:inline>
+  // Código que se ejecutará en el cliente
+  if (typeof window !== "undefined") {
+    const form = document.querySelector("#contact-form");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // Evitar recargar la página
+
+      const nombre = form.nombre.value;
+      const empresa = form.empresa.value;
+      const correo = form.correo.value;
+      const telefono = form.telefono.value;
+      const mensaje = form.mensaje.value;
+
+      const whatsappMessage = `
+        Hola, me gustaría contactar con ustedes, mis datos son:
+        - Nombre: ${nombre}
+        - Empresa: ${empresa}
+        - Correo: ${correo}
+        - Teléfono: ${telefono}
+        - Mensaje: ${mensaje}
+      `;
+
+      const whatsappUrl = `https://wa.me/51954659752?text=${encodeURIComponent(
+        whatsappMessage
+      )}`;
+
+      window.open(whatsappUrl, "_blank");
+    });
+  }
+</script>

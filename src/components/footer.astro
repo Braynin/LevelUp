@@ -6,24 +6,22 @@ import FooterSection from "./footerSection.astro";
 <footer
   class="h-full celular:px-20 tablet:px-10 py-10 px-40 text-center text-white bg-black"
 >
-  <div class="max-w-screen-2xl mx-auto flex">
-    <img src="logo.png" alt="Owlyx Logo" class="w-24 h-24" />
-    <h2>Owlyx</h2>
+  <div class="max-w-screen-2xl mx-auto flex celular:justify-around">
+    <img src="../logo_owlyxwhite.webp" alt="Owlyx Logo" class="w-20 mb-4" />
+    <h2 class="text-3xl font-bold my-auto ml-3">Owlyx</h2>
   </div>
   <div
     class="celular:flex-col celular:items-center max-w-screen-2xl mx-auto flex justify-between flex-wrap"
   >
     <FooterSection header="SERVICIOS">
       <a class="mb-1" href="/CreacióndeSitiosWeb">Creación de Sitios Web</a>
-      <a class="mb-1" href="/DiseñodeSitios">Diseño de Sitios Web</a>
+      <a class="mb-1" href="/DiseñodeSitiosWeb">Diseño de Sitios Web</a>
       <a class="mb-1" href="/BrandingeIdentidad">Branding e Identidad</a>
     </FooterSection>
-    <FooterSection header="UBICACIÓN">
-      <p class="mb-1">Av. Aquisito Noma 6496, Cercado de Lima</p>
-    </FooterSection>
+
     <FooterSection header="CONTACTO">
-      <p class="mb-1">+51 941 444 077</p>
-      <p class="mb-1">hola@invadion.com</p>
+      <p class="mb-1">+51 954 659 752</p>
+      <p class="mb-1">team@owlyx.net</p>
     </FooterSection>
     <FooterSection header="REDES SOCIALES">
       <SocialIcons />

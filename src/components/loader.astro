@@ -1,0 +1,18 @@
+---
+const { show } = Astro.props;
+---
+
+<div
+  class={`fixed inset-0 bg-black flex items-center justify-center transition-opacity duration-500 ${show ? "opacity-100 z-50" : "opacity-0 z-[-1]"}`}
+>
+  <div class="text-center">
+    <!-- Logo -->
+    <img src="../logo_owlyxwhite.webp" alt="Logo" class="h-16 w-auto mb-4" />
+    <!-- Loading animation -->
+    <div class="flex justify-center items-center space-x-2">
+      <div class="w-4 h-4 bg-white rounded-full animate-bounce"></div>
+      <div class="w-4 h-4 bg-white rounded-full animate-bounce delay-200"></div>
+      <div class="w-4 h-4 bg-white rounded-full animate-bounce delay-400"></div>
+    </div>
+  </div>
+</div>

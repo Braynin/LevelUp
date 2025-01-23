@@ -22,7 +22,7 @@ import Button from "./button.astro";
         para brindarte la mejor solución tecnológica.
       </p>
 
-      <Button href="/contacto">Contáctanos</Button>
+      <Button href="/contacto" id="contacto">Contáctanos</Button>
     </div>
     <div
       class="relative overflow-hidden h-full celular:w-full tablet:w-full tablet:pt-10"
@@ -43,3 +43,23 @@ import Button from "./button.astro";
     </div>
   </div>
 </div>
+<script is:inline>
+  // Código que se ejecutará en el cliente
+  if (typeof window !== "undefined") {
+    const form = document.querySelector("#contacto");
+
+    form.addEventListener("click", (event) => {
+      event.preventDefault(); // Evitar recargar la página
+
+      const whatsappMessage = `
+        Hola, deseo saber más información sobre sus servicios, me gustará contactar con ustedes.
+      `;
+
+      const whatsappUrl = `https://wa.me/51954659752?text=${encodeURIComponent(
+        whatsappMessage
+      )}`;
+
+      window.open(whatsappUrl, "_blank");
+    });
+  }
+</script>

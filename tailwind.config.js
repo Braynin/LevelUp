@@ -16,8 +16,8 @@ module.exports = {
         imgnDiseñoWeb: "url('/imagen_diseñoweb.webp')",
       },
       animation: {
-        fadeInOut1: "fadeInOut1 6s ease-in-out infinite",
-        fadeInOut2: "fadeInOut2 6s ease-in-out infinite",
+        fadeInOut1: "fadeInOut1 20s ease-in-out infinite",
+        fadeInOut2: "fadeInOut2 20s ease-in-out infinite",
       },
       keyframes: {
         fadeInOut1: {
