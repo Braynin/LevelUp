@@ -17,8 +17,8 @@ const isActive =
 ---
 
 <a
-  class={`cursor-pointer peer font-bold  text-gray-700  hover:text-black ${
-    isActive ? "text-blue-800 font-bold" : ""
+  class={`cursor-pointer peer font-bold   hover:text-black ${
+    isActive ? "text-blue-800" : " text-gray-700"
   }`}
   {...label === "Servicios" ? {} : { href: path }}
 >
