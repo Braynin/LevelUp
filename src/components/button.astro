@@ -7,7 +7,7 @@ const { href, type, classList, id } = Astro.props;
     <a
       href={href}
       id={id}
-      class={`celular:w-10/12 text-center block w-2/5 py-2 bg-transparent text-black text-base font-bold border-2 border-black hover:bg-black hover:text-white ${classList || ""}`}
+      class={`celular:w-10/12 text-center block w-2/5 py-2  bg-black text-white text-base font-bold border-2 border-black hover:bg-transparent hover:text-black ${classList || ""}`}
     >
       <slot />
     </a>
@@ -15,7 +15,7 @@ const { href, type, classList, id } = Astro.props;
     <button
       type={type}
       id={id}
-      class={`celular:w-10/12 text-center w-2/5 py-2 bg-transparent text-black text-base font-bold border-2 border-black hover:bg-black hover:text-white ${classList || ""}`}
+      class={`celular:w-10/12 text-center w-2/5 py-2  bg-black text-white text-base font-bold border-2 border-black hover:bg-transparent hover:text-black ${classList || ""}`}
     >
       <slot />
     </button>
