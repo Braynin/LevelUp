@@ -2,27 +2,28 @@
 import Button from "./button.astro";
 ---
 
-<div class="flex items-center celular:flex-col">
+<div class="flex items-center justify-end celular:flex-col pt-24 celular:pt-14 ">
+  
   <div
     class="flex flex-col items-center w-1/2 pt-10 gap-7 celular:order-2 celular:w-full celular:pt-10"
   >
     <div class="flex flex-col w-3/5 relative celular:w-10/12">
-      <h1 class="text-5xl font-bold w-full text-yellow-500 animate-fadeInOut1">
-        Desarrollo Web
+      <h1 class="text-5xl font-audiowide w-full text-white  animate-fadeInOut1">
+        <span class="bg-anaranjado pl-2 pr-2">Desarrollo</span><span class="bg-anaranjado pl-2 pr-2">Web</span>
       </h1>
       <h1
-        class="text-5xl font-bold w-full text-yellow-500 animate-fadeInOut2 absolute"
+        class="text-5xl font-audiowide w-full text-white animate-fadeInOut2 absolute bg-anaranjado p-2"
       >
         Diseño Web
       </h1>
     </div>
     <div class="flex flex-col w-3/5 relative celular:w-10/12">
-      <p class="text-base text-justify w-full animate-fadeInOut1">
+      <p class="text-base font-syne text-justify w-full animate-fadeInOut1 text-white ">
         Somos un equipo de expertos en desarrollo y diseño web que se
         especializa en la creación de sitios web atractivos y funcionales que
         reflejen la identidad de tu negocio.
       </p>
-      <p class="text-base text-justify w-full animate-fadeInOut2 absolute">
+      <p class="text-base text-justify font-syne w-full animate-fadeInOut2 absolute text-white">
         Nuestro enfoque se basa en la creación de sitios web que reflejen la
         identidad de tu negocio y que sean fáciles de navegar y usar.
       </p>
@@ -30,18 +31,18 @@ import Button from "./button.astro";
     <div
       class="flex flex-col w-3/5 relative celular:w-10/12 celular:items-center"
     >
-      <Button href="/Contacto/" classList=" animate-fadeInOut1 "
+      <Button href="/Contacto/" classList=" animate-fadeInOut1 font-syne"
         >Contáctanos</Button
       >
-      <Button href="/Contacto/" classList=" animate-fadeInOut2 absolute"
+      <Button href="/Contacto/" classList=" animate-fadeInOut2 absolute font-syne"
         >Contáctanos</Button
       >
     </div>
   </div>
 
-  <img
+  <!-- <img
     class="w-1/2 celular:w-full celular:object-cover celular:order-1"
-    src="\imagen_heroindex.webp"
+    src="\imagen_heroindex.web" 
     alt="Imagen de ejemplo"
-  />
+  /> -->
 </div>

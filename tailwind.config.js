@@ -24,6 +24,16 @@ export default {
           "95%, 100%": { opacity: "0", zIndex: "0" },
         },
       },
+      colors: {
+        fucsia: "#F92663",
+        anaranjado: "#FF8E35",
+        neon: "#5A1AE5",
+        negro: "#1E1E1E",
+      },
+      fontFamily: {
+        audiowide: ['Audiowide', 'serif'],
+        syne: ['Syne', 'sans-serif'],
+      }
     },
   },
   plugins: [],
