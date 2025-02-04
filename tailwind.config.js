@@ -6,15 +6,9 @@ export default {
   theme: {
     screens: {
       celular: { max: "850px" },
-      tablet: { min: "850px", max: "1200px" },
-      escritorio: { min: "1200px" },
+      escritorio: { min: "850px" },
     },
     extend: {
-      backgroundImage: {
-        imgnDesarrolloWeb: "url('/imagen_desarrolloweb.webp')",
-        imgnDesarrolloWebCelular: "url('/imagen_desarrollowebcelular.webp')",
-        imgnDiseñoWeb: "url('/imagen_diseñoweb.webp')",
-      },
       animation: {
         fadeInOut1: "fadeInOut1 20s ease-in-out infinite",
         fadeInOut2: "fadeInOut2 20s ease-in-out infinite",
