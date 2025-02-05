@@ -1,0 +1,105 @@
+---
+const { servicio } = Astro.props;
+
+import Button from "./button.astro";
+import servicios from "../assets/servicios.js";
+
+const servicioData = servicios.find((s) => s.href === servicio);
+
+const heroEscritorio = servicioData?.images.hero.escritorio;
+const heroCelular = servicioData?.images.hero.celular;
+const separadorEscritorio = servicioData?.images.separador.escritorio;
+const separadorCelular = servicioData?.images.separador.celular;
+---
+
+<main class="w-full font-syne">
+    {servicioData ? (
+        <section
+        id="hero"
+      class='h-[106vh] flex justify-center items-center bg-cover border-b-2 border-neon'
+      data-servicio={JSON.stringify(servicioData)}
+     
+    >
+      <div
+        class="text-center w-2/5 flex flex-col items-center celular:w-10/12 font-bold"
+      >
+        <h1
+          class="text-5xl font-audiowide bg-gradient-to-r from-fucsia to-neon bg-clip-text text-transparent  mb-4 w-full text-center celular:w-full escritorio:w-full"
+        >
+          {servicioData.title2}
+        </h1> 
+        <p class="mb-10">
+          {servicioData.description}
+        </p>
+        <Button href="/contacto">Contáctanos</Button>
+      </div>
+    </section>
+    <section
+      class="w-5/6 my-5 mx-auto flex flex-col items-center celular:w-full celular:px-6"
+    >
+      <h2 class="text-3xl font-bold my-6 text-center font-audiowide text-negro bg-anaranjado px-2">
+        {servicioData.sections[0].title}
+      </h2>
+
+      <div
+        class="text-center flex justify-around w-full celular:text-base flex-wrap"
+      >
+        {servicioData.sections[0].options.map((option) => (
+          <div class="flex flex-col items-center p-2 w-60 mx-1.5 celular:w-36 ">
+          <div set:html={option.icon}></div>
+          <h4 class="my-3 font-semibold text-fucsia">{option.title}</h4>
+          <p class="text-center text-sm text-gris celular:text-[13px]">
+            {option.description}
+          </p>
+        </div> 
+        ))}
+      </div>
+    </section>
+
+    <div
+      id="separador"
+      class=" w-full h-48 object-cover  bg-fixed border-y-2 border-neon">
+    </div>
+
+    <section
+      class="w-3/4 my-5 mx-auto flex flex-col items-center celular:w-full celular:px-6"
+    >
+      <h2 class="text-3xl font-bold my-4 text-center font-audiowide text-negro bg-anaranjado px-2">
+        {servicioData.sections[1].title}
+      </h2>
+
+      <div class="text-center flex justify-around w-full celular:text-base flex-wrap">
+        {servicioData.sections[1].options.map((option) => (
+          <div class="flex flex-col items-center p-2 w-60 mx-1.5 celular:w-36">
+         <div set:html={option.icon}></div>
+          <h4 class="my-5 font-semibold  text-fucsia">{option.title}</h4>
+          <p class="text-center text-sm  text-gris">
+            {option.description}
+          </p>
+        </div>
+        ))}      
+      </div>
+    </section>
+    ) : (
+        <h1>Servicio no encontrado</h1>
+      )}
+    </main>
+    <script is:inline>
+      
+      const heroSection = document.getElementById('hero');
+      const separadorSection = document.getElementById('separador');
+      const servicioData = JSON.parse(heroSection.getAttribute('data-servicio'));
+      const updateBackground = () => {
+        if (window.innerWidth <= 850) {
+          heroSection.style.backgroundImage = 'url(' + `${servicioData?.images.hero.celular}` + ')';
+          separadorSection.style.backgroundImage = 'url(' + `${servicioData?.images.separador.celular}` + ')';
+        } else {
+          heroSection.style.backgroundImage = 'url(' + `${servicioData?.images.hero.escritorio}` + ')';
+          separadorSection.style.backgroundImage = 'url(' + `${servicioData?.images.separador.escritorio}` + ')';
+        }
+      };
+      window.addEventListener('resize', updateBackground);
+      updateBackground(); // Ejecutar al inicio
+    </script>
+
+    

@@ -4,16 +4,23 @@ import Nav from "./nav.astro";
 
 <header
   id="header"
-  class="celular:pl-[1.2rem] celular:pr-[2.2rem] w-full h-14 px-32 flex justify-between items-center bg-transparent fixed z-50 transition duration-300 ease-in-out"
+  class="celular:pl-[1.2rem] celular:pr-[2.2rem] w-full h-14 px-32 flex justify-between items-center bg-transparent bg-opacity-50 fixed z-40 transition duration-300 ease-in-out text-white"
 >
-  <a href="/" class="flex items-center">
+  <a href="/" class="flex items-center relative">
     <img
-      src="../logo_owlyxblack.webp"
+      id="logo"
+      src="../logo_owlyxwhite.webp"
       alt="Owlyx Logo"
-      class="w-16 celular:w-12"
+      class="w-28 celular:w-12"
     />
-    <h2 class="ml-3 text-3xl font-bold my-auto celular:text-xl">Owlyx</h2></a
-  >
+
+    <img
+      id="logo-letrawhite"
+      src="../OWLYX.png"
+      alt="Owlyx Logo"
+      class="w-36 celular:w-12 cls-1"
+    />
+  </a>
   <Nav />
 </header>
 
@@ -22,17 +29,24 @@ import Nav from "./nav.astro";
     function initializeScript() {
       try {
         const element = document.getElementById("header");
+        const logo = document.getElementById("logo");
 
         if (!element) {
-          console.error("El elemento con ID 'header' no fue encontrado.");
+          console.error("No se encontro un elemento.");
           return;
         }
 
         window.addEventListener("scroll", () => {
           if (window.scrollY >= 90) {
+            logo.src = "../logo_owlyxblack.webp";
             element.classList.add("bg-white", "shadow-md");
+            element.classList.remove("text-white");
+            element.classList.add("text-black");
           } else {
+            logo.src = "../logo_owlyxwhite.webp";
             element.classList.remove("bg-white", "shadow-md");
+            element.classList.remove("text-black");
+            element.classList.add("text-white");
           }
         });
       } catch (error) {
