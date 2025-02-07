@@ -769,7 +769,7 @@ const servicios = [
     images: {
       hero: {
         escritorio: "../hero-branding.jpg",
-        celular: "../hero-branding-identidad.webp",
+        celular: "../hero-branding.jpg",
       },
       separador: {
         escritorio: "../separador-branding-identidad.webp",
