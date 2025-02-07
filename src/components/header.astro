@@ -4,21 +4,21 @@ import Nav from "./nav.astro";
 
 <header
   id="header"
-  class="celular:pl-[1.2rem] celular:pr-[2.2rem] w-full h-14 px-32 flex justify-between items-center bg-transparent bg-opacity-50 fixed z-40 transition duration-300 ease-in-out text-white"
+  class="celular:px-8 w-full h-14 px-32 flex justify-between items-center bg-transparent bg-opacity-50 celular:bg-opacity-100 fixed z-40 transition duration-300 ease-in-out text-white celular:text-negro"
 >
   <a href="/" class="flex items-center relative">
     <img
       id="logo"
-      src="../logo_owlyxwhite.webp"
+      src="../logo-owlyx-white.webp"
       alt="Owlyx Logo"
-      class="w-28 celular:w-12"
+      class="w-16 mr-5"
     />
 
     <img
-      id="logo-letrawhite"
-      src="../OWLYX.png"
-      alt="Owlyx Logo"
-      class="w-36 celular:w-12 cls-1"
+      id="isologo"
+      src="../owlyx-logo-letra-white.webp"
+      alt="Owlyx Logo Letra"
+      class="w-36 celular:w-24"
     />
   </a>
   <Nav />
@@ -30,6 +30,7 @@ import Nav from "./nav.astro";
       try {
         const element = document.getElementById("header");
         const logo = document.getElementById("logo");
+        const isologo = document.getElementById("isologo");
 
         if (!element) {
           console.error("No se encontro un elemento.");
@@ -38,12 +39,14 @@ import Nav from "./nav.astro";
 
         window.addEventListener("scroll", () => {
           if (window.scrollY >= 90) {
-            logo.src = "../logo_owlyxblack.webp";
+            isologo.src = "../owlyx-logo-letra-black.webp";
+            logo.src = "../logo-owlyx-black.webp";
             element.classList.add("bg-white", "shadow-md");
             element.classList.remove("text-white");
             element.classList.add("text-black");
           } else {
-            logo.src = "../logo_owlyxwhite.webp";
+            isologo.src = "../owlyx-logo-letra-white.webp";
+            logo.src = "../logo-owlyx-white.webp";
             element.classList.remove("bg-white", "shadow-md");
             element.classList.remove("text-black");
             element.classList.add("text-white");

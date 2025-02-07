@@ -4,11 +4,15 @@ import FooterSection from "./footerSection.astro";
 ---
 
 <footer
-  class="h-full celular:px-20 tablet:px-10 py-10 px-40 text-center text-white bg-[#1E1E1E]"
+  class="w-full celular:px-20 tablet:px-10 py-10 px-40 text-center text-white bg-[#1E1E1E]"
 >
-  <div class="max-w-screen-2xl mx-auto flex celular:justify-around">
-    <img src="../logo_owlyxwhite.webp" alt="Owlyx Logo" class="w-24 mb-4" />
-    <h2 class="text-3xl font-bold my-auto ml-3">Owlyx</h2>
+  <div class="mb-4 flex items-center celular:justify-around">
+    <img src="../logo-owlyx-white.webp" alt="Owlyx Logo" class="w-24 mr-2" />
+    <img
+      src="../isologo-owlyx-white.webp"
+      alt="Owlyx Logo Letra"
+      class="h-10"
+    />
   </div>
   <div
     class="celular:flex-col celular:items-center max-w-screen-2xl mx-auto flex justify-between flex-wrap"
