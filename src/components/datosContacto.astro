@@ -1,42 +1,134 @@
----
-
----
-
-<div class="bg-black flex flex-col items-center text-center py-16">
-  <h1 class="text-3xl text-white mb-8">Ponte en contacto</h1>
-  <div
-    class="flex flex-row justify-center w-full max-w-screen-lg px-28 celular:flex-col celular:justify-center celular:px-5"
-  >
-    <!-- Dirección -->
-    <!-- <div
-      class="flex flex-col w-1/3 px-16 celular:w-full celular:px-5 mb-4 items-center celular:border-t-2 celular:border-b-2"
-    >
-      <h1 class="text-2xl text-white mb-2 celular:pt-3">Dirección:</h1>
-      <p class="text-white mb-1 px-1 text-center pb-3">
-        Av. Aquisito Noma 6496, Cercado de Lima
-      </p>
-    </div> -->
-
-    <!-- Celular -->
-    <div
-      class="flex flex-col w-1/3 px-16 tablet:border-r-2 escritorio:border-r-2 celular:border-hidden border-gray-300 celular:w-full celular:px-5 mb-4 items-center"
-    >
-      <h1 class="text-2xl text-white mb-2">Celular:</h1>
-      <p class="text-white mb-2 text-center">+51 954 659 752</p>
-    </div>
-
-    <!-- Correo -->
-    <div
-      class="flex flex-col w-1/3 px-16 celular:w-full celular:px-5 mb-4 items-center celular:border-b-2 celular:border-t-2"
-    >
-      <h1 class="text-2xl text-white mb-2 celular:pt-3">Correo:</h1>
-      <p class="text-white mb-2 text-center celular:pb-3">team@owlyx.net</p>
-    </div>
+<div class="cuadrado-container">
+  <div class="cuadrado cuadrado-1">
+    <span class="texto-default font-syne font-semibold">Horario</span>
+    <span class="texto-hover font-syne">Lunes a Viernes de 9:00 a 18:00</span>
   </div>
-
-  <!-- Horario -->
-  <div class="flex justify-center items-center mt-5">
-    <h1 class="text-lg text-white mr-1">Horario:</h1>
-    <p class="text-white">Lunes a Viernes de 9:00 a 18:00</p>
+  <div class="cuadrado cuadrado-2">
+    <span class="texto-default font-syne font-semibold">Correo</span>
+    <span class="texto-hover font-syne font-semibold">team@owlyx.net</span>
+  </div>
+  <div class="cuadrado cuadrado-3">
+    <span class="texto-default font-syne font-semibold">Celular</span>
+    <span class="texto-hover font-syne">+51 954 659 752</span>
   </div>
 </div>
+
+<style>
+  .cuadrado-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.cuadrado {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, filter 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.cuadrado-1 {
+  background-image: url('/contacto-direccion.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.cuadrado-2 {
+  background-image: url('/contacto-mail.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.cuadrado-3 {
+  background-image: url('/contac-celular.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay */
+.cuadrado::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  transition: background 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hover para escritorio */
+.cuadrado:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cuadrado:hover::after {
+  background: linear-gradient(to top, rgba(231, 76, 60, 0.3), rgba(0, 0, 0, 0));
+}
+
+.cuadrado:hover .cuadrado-1,
+.cuadrado:hover .cuadrado-2,
+.cuadrado:hover .cuadrado-3 {
+  filter: brightness(1);
+}
+
+.texto-default, .texto-hover {
+  position: absolute;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.texto-default {
+  opacity: 1;
+}
+
+.texto-hover {
+  opacity: 0;
+}
+
+.cuadrado.hover-active .texto-default {
+  opacity: 0;
+}
+
+.cuadrado.hover-active .texto-hover {
+  opacity: 1;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .cuadrado {
+    width: 100%; /* Ajusta el tamaño para pantallas pequeñas */
+    height: 300px; /* Reduce la altura en dispositivos móviles */
+  }
+  .cuadrado-container{
+    justify-content: none;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+</style>
+<script>
+  // Función para agregar/remover la clase de hover
+document.querySelectorAll('.cuadrado').forEach(function(cuadrado) {
+  cuadrado.addEventListener('click', function() {
+    // Alternar la clase 'hover-active' para simular el hover
+    cuadrado.classList.toggle('hover-active');
+  });
+});
+
+</script>
