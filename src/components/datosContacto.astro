@@ -1,134 +1,62 @@
-<div class="cuadrado-container">
-  <div class="cuadrado cuadrado-1">
-    <span class="texto-default font-syne font-semibold">Horario</span>
-    <span class="texto-hover font-syne">Lunes a Viernes de 9:00 a 18:00</span>
-  </div>
-  <div class="cuadrado cuadrado-2">
-    <span class="texto-default font-syne font-semibold">Correo</span>
-    <span class="texto-hover font-syne font-semibold">team@owlyx.net</span>
-  </div>
-  <div class="cuadrado cuadrado-3">
-    <span class="texto-default font-syne font-semibold">Celular</span>
-    <span class="texto-hover font-syne">+51 954 659 752</span>
-  </div>
+---
+import datosContacto from "../assets/datosContacto.js";
+---
+
+<div
+  class="flex justify-between p-7 my-7 celular:flex-col celular:items-center celular:gap-5"
+>
+  {
+    datosContacto.map((dato) => (
+      <div
+        class="dato group hover:shadow-2xl hover:shadow-black hover:after:bg-gradient-to-t hover:after:from-fucsia hover:after:to-negro hover:brightness-125 w-96 h-96 relative flex justify-center items-center text-lg rounded-xl overflow-hidden transition-shadow bg-cover bg-center cursor-pointer"
+        style={`background-image: url('${dato.image}')`}
+      >
+        <h3 class="group-focus:opacity-0 absolute transition-opacity z-10 font-syne font-semibold">
+          {dato.title}
+        </h3>
+        <p class="group-focus:opacity-100 absolute transition-opacity z-10 opacity-0 font-syne">
+          {dato.info}
+        </p>
+      </div>
+    ))
+  }
 </div>
 
 <style>
-  .cuadrado-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.cuadrado {
-  width: 400px;
-  height: 400px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 18px;
-  color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease, filter 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.5);
-  position: relative;
-}
-
-.cuadrado-1 {
-  background-image: url('/contacto-direccion.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.cuadrado-2 {
-  background-image: url('/contacto-mail.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.cuadrado-3 {
-  background-image: url('/contac-celular.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-/* Overlay */
-.cuadrado::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: transparent;
-  transition: background 0.3s ease;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Hover para escritorio */
-.cuadrado:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.cuadrado:hover::after {
-  background: linear-gradient(to top, rgba(231, 76, 60, 0.3), rgba(0, 0, 0, 0));
-}
-
-.cuadrado:hover .cuadrado-1,
-.cuadrado:hover .cuadrado-2,
-.cuadrado:hover .cuadrado-3 {
-  filter: brightness(1);
-}
-
-.texto-default, .texto-hover {
-  position: absolute;
-  transition: opacity 0.3s ease;
-  z-index: 3;
-}
-
-.texto-default {
-  opacity: 1;
-}
-
-.texto-hover {
-  opacity: 0;
-}
-
-.cuadrado.hover-active .texto-default {
-  opacity: 0;
-}
-
-.cuadrado.hover-active .texto-hover {
-  opacity: 1;
-}
-
-/* Estilos para dispositivos móviles */
-@media (max-width: 768px) {
-  .cuadrado {
-    width: 100%; /* Ajusta el tamaño para pantallas pequeñas */
-    height: 300px; /* Reduce la altura en dispositivos móviles */
+  /* Overlay */
+  .cuadrado::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    transition: background 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
   }
-  .cuadrado-container{
-    justify-content: none;
-    gap: 20px;
-    display: flex;
-    flex-direction: column;
+
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 768px) {
+    .cuadrado {
+      width: 100%; /* Ajusta el tamaño para pantallas pequeñas */
+      height: 300px; /* Reduce la altura en dispositivos móviles */
+    }
+    .cuadrado-container {
+      justify-content: none;
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
+    }
   }
-}
 </style>
 <script>
   // Función para agregar/remover la clase de hover
-document.querySelectorAll('.cuadrado').forEach(function(cuadrado) {
-  cuadrado.addEventListener('click', function() {
-    // Alternar la clase 'hover-active' para simular el hover
-    cuadrado.classList.toggle('hover-active');
+  document.querySelectorAll(".dato").forEach(function (cuadrado) {
+    cuadrado.addEventListener("click", function () {
+      // Alternar la clase 'hover-active' para simular el hover
+      cuadrado.classList.toggle("hover-active");
+    });
   });
-});
-
 </script>

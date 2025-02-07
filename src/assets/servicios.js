@@ -432,7 +432,7 @@ const servicios = [
       "Transforma ideas en sitios atractivos y funcionales, mejorando la experiencia del usuario y ayudando a que tu negocio crezca en el entorno digital.",
     images: {
       hero: {
-        escritorio: "../web-desing.jpg",
+        escritorio: "../web-design.webp",
         celular: "../hero-diseño-web.webp",
       },
       separador: {
@@ -773,7 +773,7 @@ const servicios = [
       },
       separador: {
         escritorio: "../separador-branding-identidad.webp",
-        celular: "../separador-branding-identidad-celular.webp",
+        celular: "../separador-branding-identidad.webp",
       },
     },
     sections: [
