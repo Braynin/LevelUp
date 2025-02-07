@@ -773,7 +773,7 @@ const servicios = [
       },
       separador: {
         escritorio: "../separador-branding-identidad.webp",
-        celular: "../separador-branding-identidad-celular.webp",
+        celular: "../separador-branding-identidad.webp",
       },
     },
     sections: [
