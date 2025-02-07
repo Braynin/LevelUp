@@ -3,52 +3,56 @@ import Button from "./button.astro";
 ---
 
 <section
-    class="h-[106vh] celular:h-[500px] flex justify-center items-center bg-[url('/inicio-hero.jpg')] celular:bg-[url('/index-hero-mobile.jpg')] celular: bg-cover bg-opacity-10"
-  >
-<div class="flex items-center justify-between celular:flex-col pt-24 celular:pt-14">
+  class="h-[106vh] celular:h-[500px] flex justify-center items-center bg-[url('/inicio-hero.webp')] celular:bg-[url('/index-hero-mobile.webp')] celular: bg-cover bg-opacity-10"
+>
   <div
     class="flex items-center justify-between celular:flex-col pt-24 celular:pt-14"
   >
     <div
-      class="flex flex-col items-center w-1/2 pt-10 gap-7 celular:order-2 celular:w-full celular:pt-10"
+      class="flex items-center justify-between celular:flex-col pt-24 celular:pt-14"
     >
       <div
-        class="flex flex-col w-3/5 relative celular:w-10/12 text-white celular:text-white"
+        class="flex flex-col items-center w-1/2 pt-10 gap-7 celular:order-2 celular:w-full celular:pt-10"
       >
-        <h1
-          class="text-5xl celular:text-4xl celular:text-center font-audiowide w-full animate-fadeInOut1 bg-anaranjado p-2"
+        <div
+          class="flex flex-col w-3/5 relative celular:w-10/12 text-white celular:text-white"
         >
-          Desarrollo Web
-        </h1>
-        <h1
-          class="text-5xl celular:text-4xl celular:text-center font-audiowide w-full animate-fadeInOut2 absolute bg-anaranjado p-2"
+          <h1
+            class="text-5xl celular:text-4xl celular:text-center font-audiowide w-full animate-fadeInOut1 bg-anaranjado p-2"
+          >
+            Desarrollo Web
+          </h1>
+          <h1
+            class="text-5xl celular:text-4xl celular:text-center font-audiowide w-full animate-fadeInOut2 absolute bg-anaranjado p-2"
+          >
+            Diseño Web
+          </h1>
+        </div>
+        <div
+          class="flex flex-col w-3/5 relative celular:w-10/12 text-white celular:text-white celular:bg-blanco celular:bg-opacity-10 celular:p-6"
         >
-          Diseño Web
-        </h1>
-      </div>
-      <div
-        class="flex flex-col w-3/5 relative celular:w-10/12 text-white celular:text-white celular:bg-blanco celular:bg-opacity-10 celular:p-6"
-      >
-        <p class="text-base font-syne text-justify w-full animate-fadeInOut1">
-          Somos un equipo de expertos en desarrollo y diseño web que se
-          especializa en la creación de sitios web atractivos y funcionales que
-          reflejen la identidad de tu negocio.
-        </p>
-        <p class="text-base font-syne animate-fadeInOut2 absolute">
-          Nuestro enfoque se basa en la creación de sitios web que reflejen la
-          identidad de tu negocio y que sean fáciles de navegar y usar.
-        </p>
-      </div>
-      <div
-        class="flex flex-col w-3/5 relative celular:w-10/12 celular:items-center"
-      >
-        <Button href="/Contacto/" classList=" animate-fadeInOut1 font-syne"
-          >Contáctanos</Button
+          <p class="text-base font-syne text-justify w-full animate-fadeInOut1">
+            Somos un equipo de expertos en desarrollo y diseño web que se
+            especializa en la creación de sitios web atractivos y funcionales
+            que reflejen la identidad de tu negocio.
+          </p>
+          <p class="text-base font-syne animate-fadeInOut2 absolute">
+            Nuestro enfoque se basa en la creación de sitios web que reflejen la
+            identidad de tu negocio y que sean fáciles de navegar y usar.
+          </p>
+        </div>
+        <div
+          class="flex flex-col w-3/5 relative celular:w-10/12 celular:items-center"
         >
-        <Button
-          href="/Contacto/"
-          classList=" animate-fadeInOut2 absolute font-syne">Contáctanos</Button
-        >
+          <Button href="/Contacto/" classList=" animate-fadeInOut1 font-syne"
+            >Contáctanos</Button
+          >
+          <Button
+            href="/Contacto/"
+            classList=" animate-fadeInOut2 absolute font-syne"
+            >Contáctanos</Button
+          >
+        </div>
       </div>
     </div>
   </div>
