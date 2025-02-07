@@ -3,60 +3,22 @@ import datosContacto from "../assets/datosContacto.js";
 ---
 
 <div
-  class="flex justify-between p-7 my-7 celular:flex-col celular:items-center celular:gap-5"
+  class="flex justify-around p-7 my-7 celular:flex-col celular:items-center celular:gap-5"
 >
   {
     datosContacto.map((dato) => (
       <div
-        class="dato group hover:shadow-2xl hover:shadow-black hover:after:bg-gradient-to-t hover:after:from-fucsia hover:after:to-negro hover:brightness-125 w-96 h-96 relative flex justify-center items-center text-lg rounded-xl overflow-hidden transition-shadow bg-cover bg-center cursor-pointer"
+        tabindex="0"
+        class="group celular:h-72 celular:w-full hover:shadow-2xl hover:shadow-black hover:after:bg-gradient-to-t hover:after:from-fucsia hover:after:to-negro hover:brightness-125 w-96 h-96 relative flex justify-center items-center text-lg rounded-xl overflow-hidden transition-shadow bg-cover bg-center cursor-pointer"
         style={`background-image: url('${dato.image}')`}
       >
-        <h3 class="group-focus:opacity-0 absolute transition-opacity z-10 font-syne font-semibold">
+        <h3 class="group-focus:opacity-0 absolute transition-opacity z-10 font-syne font-bold bg-blanco bg-opacity-25 px-2">
           {dato.title}
         </h3>
-        <p class="group-focus:opacity-100 absolute transition-opacity z-10 opacity-0 font-syne">
+        <p class="group-focus:opacity-100 absolute transition-opacity z-10 opacity-0 font-syne font-bold bg-blanco bg-opacity-25 px-2">
           {dato.info}
         </p>
       </div>
     ))
   }
 </div>
-
-<style>
-  /* Overlay */
-  .cuadrado::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: transparent;
-    transition: background 0.3s ease;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  /* Estilos para dispositivos móviles */
-  @media (max-width: 768px) {
-    .cuadrado {
-      width: 100%; /* Ajusta el tamaño para pantallas pequeñas */
-      height: 300px; /* Reduce la altura en dispositivos móviles */
-    }
-    .cuadrado-container {
-      justify-content: none;
-      gap: 20px;
-      display: flex;
-      flex-direction: column;
-    }
-  }
-</style>
-<script>
-  // Función para agregar/remover la clase de hover
-  document.querySelectorAll(".dato").forEach(function (cuadrado) {
-    cuadrado.addEventListener("click", function () {
-      // Alternar la clase 'hover-active' para simular el hover
-      cuadrado.classList.toggle("hover-active");
-    });
-  });
-</script>
