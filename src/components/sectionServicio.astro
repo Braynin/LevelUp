@@ -11,9 +11,9 @@ import Button from "./button.astro";
   >
     <div
       id="dev-icon"
-      class="celular:w-14 w-20 cursor-pointer transition-transform hover:scale-110 hover:opacity-100 focus:opacity-100 flex flex-col items-center justify-center opacity-100 scale-110"
+      class="iconServicio celular:w-14 w-40 cursor-pointer transition-transform hover:scale-110 hover:opacity-100 focus:opacity-100 flex flex-col items-center justify-center opacity-100 scale-110"
     >
-      <div class="w-full h-full flex items-center justify-center">
+      <div class="w-20 flex items-center justify-center">
         <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
           ><g id="_14-Programming" data-name="14-Programming"
             ><path class="fill-blanco" d="M19 59h26v3H19z"></path><path
@@ -59,15 +59,13 @@ import Button from "./button.astro";
           ></svg
         >
       </div>
-      <p class="font-syne font-medium text-white whitespace-nowrap">
-        Desarrollo web
-      </p>
+      <p class="font-syne font-medium text-white">Desarrollo web</p>
     </div>
     <div
       id="design-icon"
-      class="celular:w-14 w-20 cursor-pointer transition-transform hover:scale-110 hover:opacity-100 focus:opacity-100 flex flex-col items-center justify-center"
+      class="iconServicio celular:w-14 w-40 cursor-pointer transition-transform hover:scale-110 hover:opacity-100 focus:opacity-100 flex flex-col items-center justify-center"
     >
-      <div class="w-full h-full flex items-center justify-center">
+      <div class="w-20 flex items-center justify-center">
         <svg
           class="mb-2"
           id="_1-App"
@@ -127,15 +125,13 @@ import Button from "./button.astro";
           ></path><path class="fill-neon" d="M42 27h14v8H42z"></path></svg
         >
       </div>
-      <p class="font-syne font-medium text-white whitespace-nowrap pl-1">
-        Diseño Web
-      </p>
+      <p class="font-syne font-medium text-white pl-1">Diseño Web</p>
     </div>
     <div
       id="branding-icon"
-      class="celular:w-14 w-20 cursor-pointer transition-transform hover:scale-110 hover:opacity-100 focus:opacity-100 flex flex-col items-center justify-center"
+      class="iconServicio celular:w-14 w-40 cursor-pointer transition-transform hover:scale-110 hover:opacity-100 focus:opacity-100 flex flex-col items-center justify-center"
     >
-      <div class="w-full h-full flex items-center justify-center">
+      <div class="w-20 flex items-center justify-center">
         <svg
           class="mb-2"
           xmlns="http://www.w3.org/2000/svg"
@@ -184,9 +180,7 @@ import Button from "./button.astro";
           ></path></svg
         >
       </div>
-      <p class="font-syne font-medium text-white whitespace-nowrap ml-2">
-        Branding
-      </p>
+      <p class="font-syne font-medium text-white ml-2">Branding</p>
     </div>
   </div>
 
@@ -263,7 +257,7 @@ import Button from "./button.astro";
     }
   });
   document.addEventListener("DOMContentLoaded", () => {
-    const icons = document.querySelectorAll(".w-20");
+    const icons = document.querySelectorAll(".iconServicio");
 
     const devIcon = document.getElementById("dev-icon");
     if (devIcon) {
