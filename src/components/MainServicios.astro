@@ -16,7 +16,7 @@ const separadorCelular = servicioData?.images.separador.celular;
     {servicioData ? (
         <section
         id="hero"
-      class='h-[106vh] flex justify-center items-center bg-cover border-b-2 border-neon'
+      class='h-[106vh] celular:h-[500px] flex justify-center items-center bg-cover border-b-2 border-neon'
       data-servicio={JSON.stringify(servicioData)}
      
     >
@@ -58,7 +58,8 @@ const separadorCelular = servicioData?.images.separador.celular;
 
     <div
       id="separador"
-      class=" w-full h-48 celular:h-44 bg-center border-y-2 border-neon">
+      class=" bg-white w-full h-48 object-contain celular:h-44 bg-center border-y-2 border-neon">
+        
     </div>
 
     <section

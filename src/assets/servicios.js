@@ -7,11 +7,11 @@ const servicios = [
       "Creamos sitios web fáciles de usar y adaptados a tu negocio. Desde páginas simples hasta tiendas en línea, nos aseguramos de que tu presencia en internet sea efectiva.",
     images: {
       hero: {
-        escritorio: "../hero-desarrollo-web.webp",
-        celular: "../hero-desarrollo-web-celular.webp",
+        escritorio: "../creacion-sitios-web.jpg",
+        celular: "../luca-bravo-XJXWbfSo2f0-unsplash.jpg",
       },
       separador: {
-        escritorio: "../separador-desarrollo-web.webp",
+        escritorio: "../separador-desarrollo-web-celular.webp",
         celular: "../separador-desarrollo-web-celular.webp",
       },
     },
@@ -433,7 +433,7 @@ const servicios = [
     images: {
       hero: {
         escritorio: "../web-desing.jpg",
-        celular: "../hero-diseño-web.webp",
+        celular: "../web-desing.jpg",
       },
       separador: {
         escritorio: "../separador-diseño-web.webp",
@@ -768,7 +768,7 @@ const servicios = [
       "Ayudamos a construir una marca única y memorable. Diseñamos tu identidad visual y conceptual para conectar emocionalmente con tu audiencia y destacar en tu mercado.",
     images: {
       hero: {
-        escritorio: "../hero-branding-identidad.webp",
+        escritorio: "../hero-branding.jpg",
         celular: "../hero-branding-identidad.webp",
       },
       separador: {
