@@ -16,7 +16,7 @@ const separadorCelular = servicioData?.images.separador.celular;
     {servicioData ? (
     <section
       id="hero"
-      class='h-[106vh] celular:h-[500px] flex justify-center items-center bg-cover bg-center celular:bg-top border-b-2 border-neon'
+      class='h-[106vh] celular:h-[500px] flex justify-center items-center bg-cover bg-center celular:bg-top border-b-2 border-fucsia'
       data-servicio={JSON.stringify(servicioData)}
      
     >
@@ -24,7 +24,7 @@ const separadorCelular = servicioData?.images.separador.celular;
         class="text-center w-2/5 flex flex-col items-center celular:w-10/12 font-bold"
       >
         <h1
-          class="text-5xl font-audiowide bg-gradient-to-r from-fucsia to-neon bg-clip-text text-transparent  mb-4 w-full text-center celular:w-full escritorio:w-full"
+          class="text-5xl font-audiowide  text-white bg-anaranjado px-4 py-2  mb-4 text-center celular:w-full "
         >
           {servicioData.title2}
         </h1> 
@@ -48,7 +48,7 @@ const separadorCelular = servicioData?.images.separador.celular;
           <div class="flex flex-col items-center p-2 w-40 mx-1.5 celular:w-36 ">
           <div set:html={option.icon}></div>
           <h4 class="my-3 font-bold text-blanco">{option.title}</h4>
-          <p class="text-center text-sm text-gris celular:text-[13px]">
+          <p class="text-center text-sm text-gris celular:text-[13px] celular:hidden">
             {option.description}
           </p>
         </div> 
@@ -65,7 +65,7 @@ const separadorCelular = servicioData?.images.separador.celular;
     <section
       class="w-3/4 my-5 mx-auto flex flex-col items-center celular:w-full celular:px-6"
     >
-      <h2 class="text-3xl font-bold my-4 text-center font-audiowide text-blanco bg-anaranjado px-2">
+      <h2 class="text-3xl font-bold my-4 text-center font-audiowide text-white bg-anaranjado px-2">
         {servicioData.sections[1].title}
       </h2>
 
@@ -74,7 +74,7 @@ const separadorCelular = servicioData?.images.separador.celular;
           <div class="flex flex-col items-center p-2 w-60 mx-1.5 celular:w-36">
          <div set:html={option.icon}></div>
           <h4 class="my-5 font-bold  text-blanco">{option.title}</h4>
-          <p class="text-center text-sm  text-gris">
+          <p class="text-center text-sm  text-gris celular:hidden">
             {option.description}
           </p>
         </div>

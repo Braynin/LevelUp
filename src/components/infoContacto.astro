@@ -1,7 +1,9 @@
 ---
 import Button from "./button.astro";
 ---
-<section class="h-[106vh] celular:h-[500px] flex justify-center items-center bg-[url('/hero-contacto.webp')] celular:bg-[url('/hero-contacto.webp')]  celular: bg-cover bg-opacity-10"
+
+<section
+  class="h-[106vh] celular:h-[500px] flex justify-center items-center bg-[url('/hero-contacto.webp')] celular:bg-[url('/hero-contacto.webp')] celular: bg-cover bg-opacity-10"
 >
   <div
     class="flex flex-col justify-evenly p-10 max-w-lg celular:items-center celular:w-full celular:p-5"
@@ -16,7 +18,7 @@ import Button from "./button.astro";
       para brindarte la mejor solución tecnológica.
     </p>
 
-    <Button href="/contacto" id="contacto">Contáctanos</Button>
+    <Button href="/Contacto/" id="contacto">Contáctanos</Button>
   </div>
 </section>
 
@@ -29,7 +31,7 @@ import Button from "./button.astro";
       event.preventDefault(); // Evitar recargar la página
 
       const whatsappMessage = `
-        Hola, deseo saber más información sobre sus servicios, me gustará contactar con ustedes.
+        Hola, deseo obtener mayor información sobre sus servicios, me gustaria agendar una reunión con ustedes.
       `;
 
       const whatsappUrl = `https://wa.me/51954659752?text=${encodeURIComponent(

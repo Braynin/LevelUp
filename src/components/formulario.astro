@@ -6,22 +6,26 @@ import Button from "./button.astro";
 <div
   class="celular:h-full celular:flex-col w-full flex justify-center items-center bg-anaranjado py-8 border-y-8 border-white"
 >
-  <div class="w-1/2 flex items-center justify-center">
+  <div class="w-1/2 flex items-center justify-center celular:hidden">
     <img
       class="w-3/4 shadow-xl"
       src="../imagen_formulario.webp"
       alt="img-formulario"
     />
   </div>
-  <div class="w-1/2">
-    <h2 class="text-3xl font-syne font-bold text-negro my-4">ESCRÍBENOS</h2>
+  <div class="w-1/2 celular:w-3/4">
+    <h2
+      class="text-3xl font-audiowide font-bold text-negro my-4 celular:text-center celular:w-full"
+    >
+      ESCRÍBENOS
+    </h2>
     <form class="celular:w-full flex flex-col gap-5 w-3/4" id="contact-form">
       <FormOption label="Nombre:" type="text" name="nombre" id="nombre" />
       <FormOption label="Empresa:" type="text" name="empresa" id="empresa" />
       <FormOption label="Correo:" type="email" name="correo" id="correo" />
       <FormOption label="Teléfono:" type="tel" name="telefono" id="telefono" />
       <FormOption label="Mensaje:" isTextarea name="mensaje" id="mensaje" />
-      <Button type="submit">ENVIAR</Button>
+      <Button type="submit" classList="celular:self-center">ENVIAR</Button>
     </form>
   </div>
 </div>
@@ -40,7 +44,7 @@ import Button from "./button.astro";
       const mensaje = form.mensaje.value;
 
       const whatsappMessage = `
-        Hola, me gustaría contactar con ustedes, mis datos son:
+        Hola, me gustaría agendar una reunión con ustedes, mis datos son:
         - Nombre: ${nombre}
         - Empresa: ${empresa}
         - Correo: ${correo}
