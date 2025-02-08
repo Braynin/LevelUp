@@ -4,15 +4,15 @@ const servicios = [
     title2: "Desarrollo Web",
     href: "CreacióndeSitiosWeb",
     description:
-      "Creamos sitios web fáciles de usar y adaptados a tu negocio. Desde páginas simples hasta tiendas en línea, nos aseguramos de que tu presencia en internet sea efectiva.",
+      "Creamos sitios web fáciles de usar y adaptados a tu negocio. Desde páginas simples hasta tiendas en línea.",
     images: {
       hero: {
-        escritorio: "../creacion-sitios-web.jpg",
-        celular: "../luca-bravo-XJXWbfSo2f0-unsplash.jpg",
+        escritorio: "../hero-desarrollo-web.jpg",
+        celular: "../hero-desarrollo-web-mobile.jpg",
       },
       separador: {
-        escritorio: "../separador-desarrollo-web-celular.webp",
-        celular: "../separador-desarrollo-web-celular.webp",
+        escritorio: "../developer.gif",
+        celular: "../developer.gif",
       },
     },
     sections: [
@@ -432,12 +432,12 @@ const servicios = [
       "Transforma ideas en sitios atractivos y funcionales, mejorando la experiencia del usuario y ayudando a que tu negocio crezca en el entorno digital.",
     images: {
       hero: {
-        escritorio: "../web-desing.jpg",
-        celular: "../web-desing.jpg",
+        escritorio: "../web-design.webp",
+        celular: "../web-design.webp",
       },
       separador: {
-        escritorio: "../separador-diseño-web.webp",
-        celular: "../separador-diseño-web-celular.webp",
+        escritorio: "../developer.gif",
+        celular: "../developer.gif",
       },
     },
     sections: [
@@ -772,8 +772,8 @@ const servicios = [
         celular: "../hero-branding.jpg",
       },
       separador: {
-        escritorio: "../separador-branding-identidad.webp",
-        celular: "../separador-branding-identidad.webp",
+        escritorio: "../developer.gif",
+        celular: "../developer.gif",
       },
     },
     sections: [
